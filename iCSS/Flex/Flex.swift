@@ -83,6 +83,9 @@ public class FlexBox:FlexItemSupport,FlexLineSupport,FlexFrameSupport,layoutTool
                 self.lines.forEach{$0.layout()}
             }
         }
+        self.subBoxes.forEach { (i) in
+            i.layout()
+        }
     }
     var lines:[FlexLine] = []
     public var resultX:CGFloat{

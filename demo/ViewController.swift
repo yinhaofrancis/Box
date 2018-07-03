@@ -23,8 +23,15 @@ class ViewController: UIViewController {
         self.flexView.layout.direction = .vertical
         for i in (0...5) {
             let v = iCSSView<FlexBox>.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-            self.flexView .addSubLayoutItem(tool: v)
+            for  _ in (0...5){
+                let k = iCSSView<FlexBox>.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                v.addSubLayoutItem(tool: k)
+                k.backgroundColor = UIColor.red
+            }
+            self.flexView.addSubLayoutItem(tool: v)
             v.backgroundColor = UIColor.black
+            v.layout.justContent = .evenly
+            v.layout.direction = .horizental
         }
         self.flexView.layout.layout()
         
