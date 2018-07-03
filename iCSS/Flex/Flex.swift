@@ -120,6 +120,12 @@ public class FlexBox:FlexItemSupport,FlexLineSupport,FlexFrameSupport,layoutTool
             self.host?.resultHeight = newValue
         }
     }
+    public var realW:CGFloat{
+        return self.resultWidth
+    }
+    public var realH:CGFloat{
+        return self.resultHeight
+    }
     public var rect:CGRect{
         return CGRect(x: resultX, y: resultY, width: resultWidth, height: resultHeight)
     }
@@ -165,7 +171,7 @@ public class FlexBox:FlexItemSupport,FlexLineSupport,FlexFrameSupport,layoutTool
             return r + c.verticalBasic
         }
         let unused = (max - sumBasic) / CGFloat(lines.count)
-        if unused > 0{
+        if unused >= 0{
             switch alignContent {
             case .stretch:
                 for i in (0..<lines.count) {
@@ -178,7 +184,6 @@ public class FlexBox:FlexItemSupport,FlexLineSupport,FlexFrameSupport,layoutTool
                     line.verticalSpace = line.verticalBasic
                 }
             }
-            
         }
         switch self.direction {
         case .vertical:

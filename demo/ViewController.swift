@@ -19,12 +19,13 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.flexView.layout.justContent = .evenly
+        self.flexView.layout.justContent = .center
         self.flexView.layout.direction = .vertical
+//        self.flexView.layout.alignItem = .start
         for i in (0...5) {
             let v = iCSSView<FlexBox>.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             for  _ in (0...5){
-                let k = iCSSView<FlexBox>.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                let k = iCSSView<FlexBox>.init(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
                 v.addSubLayoutItem(tool: k)
                 k.backgroundColor = UIColor.red
             }
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
             v.backgroundColor = UIColor.black
             v.layout.justContent = .evenly
             v.layout.direction = .horizental
+            v.layout.alignItem = .center
         }
         self.flexView.layout.layout()
         

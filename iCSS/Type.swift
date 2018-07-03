@@ -54,20 +54,4 @@ public protocol layoutTool:Rect{
     var subBoxes:[layoutTool & ItemProperty] {get set}
     func assigeSuper(sup:ItemProperty)
 }
-extension layoutTool{
-    public var realW:CGFloat{
-        if let s = self.superBox{
-            return self.width.calc(relate: s.realW)
-        }else{
-            return self.width.calc(relate: 0)
-        }
-    }
-    public var realH:CGFloat{
-        if let s = self.superBox{
-            return self.height.calc(relate: s.realW)
-        }else{
-            return self.height.calc(relate: 0)
-        }
-    }
-}
 public typealias ItemProperty = FlexItemSupport & Rect & layoutTool & LayoutFrame
