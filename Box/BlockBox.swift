@@ -24,7 +24,47 @@ public struct Margin {
     }
 }
 
+public enum BlockDisplay{
+    case inlineBlock
+    case block
+}
+
 public protocol BlockItem {
     var margin:Margin { get }
     var padding:Margin { get }
+    var display:BlockDisplay { get }
+}
+public class BlockBox:LayoutBox,FlexItem,BlockItem,Rect{
+    public var resultX: CGFloat
+    
+    public var resultY: CGFloat
+    
+    public var resultW: CGFloat
+    
+    public var resultH: CGFloat
+    
+    public var grow: Int = 0
+    
+    public var shrink: Int = 0
+    
+    public var alignSelf: Align?
+    
+    public var margin: Margin = .value(v: 0)
+    
+    public var padding: Margin = .value(v: 0)
+    
+    public var display: BlockDisplay = .block
+    
+    public var width: CGFloat
+    
+    public var height: CGFloat
+    
+    public init(width:CGFloat,height:CGFloat){
+        resultX = 0
+        resultY = 0
+        self.width = width
+        self.height = height
+        resultW = width
+        resultH = height
+    }
 }

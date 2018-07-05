@@ -26,3 +26,9 @@ extension LayoutBox{
         return CGRect(x: resultX, y: resultY, width: resultW, height: resultH)
     }
 }
+
+public typealias Box = FlexItem & LayoutBox & Rect & BlockItem
+
+public typealias FlexSubBox = FlexItem & LayoutBox & Rect
+
+public typealias BlockSubBox = BlockItem & LayoutBox & Rect

@@ -35,7 +35,7 @@ public protocol FlexItem{
 public protocol FlexLineItem{
     var justifyContent:Justify {get}
     var alignItem:Align {get}
-    var subBoxs:[Box] {get}
+    var subBoxs:[FlexSubBox] {get}
     var direction :FlexDirection {get}
 }
 public protocol FlexBoxItem{
@@ -43,12 +43,16 @@ public protocol FlexBoxItem{
     var alignContent:Justify {get}
 }
 
-public typealias Box = FlexItem & LayoutBox & Rect
-
-public class FlexBox: LayoutBox,FlexItem,FlexLineItem,FlexBoxItem,Rect {
+public class FlexBox: LayoutBox,FlexItem,FlexLineItem,FlexBoxItem,BlockItem,Rect {
+    public var margin: Margin = .value(v: 0)
+    
+    public var padding: Margin = .value(v: 0)
+    
+    public var display: BlockDisplay = .block
+    
     public var direction: FlexDirection = .row
     
-    public var subBoxs: [Box] = []
+    public var subBoxs: [FlexSubBox] = []
     
     public var width: CGFloat
     
@@ -121,7 +125,7 @@ public class FlexBox: LayoutBox,FlexItem,FlexLineItem,FlexBoxItem,Rect {
             }
         }
     }
-    func seperatedLines(subBox:[Box],
+    func seperatedLines(subBox:[FlexSubBox],
                     sumKeyPath:KeyPath<Rect,CGFloat>)->[FlexLine]{
         var sum:CGFloat = 0
         var lines:[FlexLine] = []
@@ -154,6 +158,12 @@ public class FlexBox: LayoutBox,FlexItem,FlexLineItem,FlexBoxItem,Rect {
     }
 }
 class FlexLine: Rect ,FlexItem,FlexLineItem,LayoutBox{
+    var margin: Margin = .value(v: 0)
+    
+    var padding: Margin = .value(v: 0)
+    
+    var display: BlockDisplay = .block
+    
     var direction: FlexDirection
     
     var resultX: CGFloat = 0
@@ -178,13 +188,13 @@ class FlexLine: Rect ,FlexItem,FlexLineItem,LayoutBox{
     
     var alignItem: Align
     
-    var subBoxs: [Box]
+    var subBoxs: [FlexSubBox]
     
     init(width:CGFloat,
          height:CGFloat,
          justifyContent: Justify,
          alignItem: Align,
-         subBoxs: [Box],
+         subBoxs: [FlexSubBox],
          direction:FlexDirection) {
         self.width = width
         self.height = height
@@ -210,7 +220,7 @@ class FlexLine: Rect ,FlexItem,FlexLineItem,LayoutBox{
     }
     func calcItemSpace(itemSpaceKeyPath:ReferenceWritableKeyPath<LayoutBox,CGFloat>,
                    sourceKeyPath:KeyPath<Rect,CGFloat>,
-                   subBoxs:[Box])->CGFloat{
+                   subBoxs:[FlexSubBox])->CGFloat{
         let sum = calcOriginUsage(subBoxs: subBoxs, keyPath: sourceKeyPath)
         let basic = self[keyPath:sourceKeyPath]
         let unuse = basic - sum
@@ -251,7 +261,7 @@ class FlexLine: Rect ,FlexItem,FlexLineItem,LayoutBox{
     func calcJustContent(itenXKeyPath:ReferenceWritableKeyPath<LayoutBox,CGFloat>,
                          sourceWKeyPath:KeyPath<LayoutBox,CGFloat>,
                          justContent:Justify,
-                         subBoxs:[Box],
+                         subBoxs:[FlexSubBox],
                          unuse:CGFloat){
         var i:CGFloat = 0
         var step:CGFloat = 0
@@ -290,7 +300,7 @@ class FlexLine: Rect ,FlexItem,FlexLineItem,LayoutBox{
                        alignItem:Align,
                        sourceYKeyPath:KeyPath<LayoutBox,CGFloat>,
                        sourceHKeyPath:KeyPath<Rect,CGFloat>,
-                       subBox:[Box]){
+                       subBox:[FlexSubBox]){
         
         let start = self[keyPath:sourceYKeyPath]
         subBox.forEach { (i) in
@@ -321,7 +331,7 @@ class FlexLine: Rect ,FlexItem,FlexLineItem,LayoutBox{
             return r + i[keyPath:keyPath]
         }
     }
-    func calcOriginUsage(subBoxs:[Box],
+    func calcOriginUsage(subBoxs:[FlexSubBox],
                    keyPath:KeyPath<Rect,CGFloat>)->CGFloat{
         return subBoxs.reduce(0) { (r, c) -> CGFloat in
             return r + c[keyPath:keyPath]
