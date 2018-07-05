@@ -2,50 +2,38 @@
 //  ViewController.swift
 //  demo
 //
-//  Created by hao yin on 2018/7/3.
+//  Created by hao yin on 2018/7/4.
 //  Copyright © 2018年 hao yin. All rights reserved.
 //
 
 import UIKit
-import iCSS
+import Box
 class ViewController: UIViewController {
 
-    override func loadView() {
-        self.view = iCSSView<FlexBox>.init(frame: UIScreen.main.bounds)
-        self.view.backgroundColor = UIColor.white
-    }
-    var flexView:iCSSView<FlexBox>{
-        return self.view as! iCSSView<FlexBox>
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.flexView.layout.justContent = .center
-        self.flexView.layout.direction = .vertical
-//        self.flexView.layout.alignItem = .start
-        for i in (0...5) {
-            let v = iCSSView<FlexBox>.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-            for  _ in (0...5){
-                let k = iCSSView<FlexBox>.init(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
-                v.addSubLayoutItem(tool: k)
-                k.backgroundColor = UIColor.red
-            }
-            self.flexView.addSubLayoutItem(tool: v)
-            v.backgroundColor = UIColor.black
-            v.layout.justContent = .evenly
-            v.layout.direction = .horizental
-            v.layout.alignItem = .center
-        }
-        self.flexView.layout.layout()
-        
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let base = FlexBox(width: self.view.frame.width, height: self.view.frame.height);
+        base.justifyContent = .end
+        base.alignContent = .between
+        base.alignItem = .start
+//        base.wrap = true
+        let a = FlexBox(width: 150, height: 60);
+        let b = FlexBox(width: 150, height: 70);
+        b.shrink = 2
+        a.shrink = 1
+        let c = FlexBox(width: 150, height: 80);
+        a.alignSelf = .end
+        let d = FlexBox(width: 150, height: 90);
+        base.subBoxs = [a,b,c]
+        
+        base.layout()
+        base.subBoxs.forEach { (i) in
+            let v = UIView(frame: i.resultRect)
+            v.backgroundColor = UIColor.red;
+            self.view.addSubview(v);
+        }
     }
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
