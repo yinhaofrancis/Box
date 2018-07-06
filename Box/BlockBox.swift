@@ -35,6 +35,7 @@ public protocol BlockItem {
     var display:BlockDisplay { get }
 }
 public class BlockBox:LayoutBox,FlexItem,BlockItem,Rect{
+    
     public var resultX: CGFloat
     
     public var resultY: CGFloat
