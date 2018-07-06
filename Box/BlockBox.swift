@@ -67,4 +67,7 @@ public class BlockBox:LayoutBox,FlexItem,BlockItem,Rect{
         resultW = width
         resultH = height
     }
+    public func layout() {
+        
+    }
 }

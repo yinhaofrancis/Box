@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         a.alignSelf = .end
         let d = FlexBox(width: 150, height: 90);
         base.subBoxs = [a,b,c]
+        b.alignSelf = .center
         
         base.layout()
         base.subBoxs.forEach { (i) in

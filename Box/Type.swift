@@ -11,6 +11,7 @@ import QuartzCore
 public protocol Rect{
     var width:CGFloat {get set}
     var height:CGFloat {get set}
+    func layout()
 }
 
 public protocol LayoutBox:class{
