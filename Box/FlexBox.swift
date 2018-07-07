@@ -42,15 +42,17 @@ public protocol FlexBoxItem{
     var alignContent:Justify {get}
 }
 
-public class FlexBox: Box,FlexLineItem,FlexBoxItem,Container {
-    
+public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
+    public func storeRect(result: CGRect) {
+        self.host?.frame = result
+    }
     public var subBoxs: [Box] = []
     
     public func addSubBox(box: Box) {
         lines.removeAll()
         self.subBoxs.append(box)
     }
-    public var host: UIView?
+    public var host: T?
 
     public var margin: Margin = .value(v: 0)
     
@@ -98,6 +100,7 @@ public class FlexBox: Box,FlexLineItem,FlexBoxItem,Container {
     
     var selfLine:FlexLine?
     
+    public var needFitSize:Bool = false;
     
     public init(width:CGFloat?,height:CGFloat?){
         self.width = width;
@@ -108,7 +111,11 @@ public class FlexBox: Box,FlexLineItem,FlexBoxItem,Container {
         self.resultH = height ?? 0;
     }
     public func layout(){
+        
         self.subBoxs.forEach { (i) in
+            if (i.needFitSize){
+                i.fixSize()
+            }
             i.layout()
         }
         if(wrap){
@@ -175,8 +182,29 @@ public class FlexBox: Box,FlexLineItem,FlexBoxItem,Container {
         }
         return lines;
     }
+    public func fixSize() {
+        if let h = self.host{
+            let size = CGSize(width: self.width ?? .infinity, height: self.height ?? .infinity)
+            let fitsize = h.sizeThatFits(size)
+            if self.width == nil{
+                self.width = fitsize.width
+            }
+            if(self.height == nil){
+                self.height = fitsize.height
+            }
+            
+        }
+    }
 }
 class FlexLine: FlexSubBox{
+    func fixSize() {
+        
+    }
+    func storeRect(result: CGRect) {
+        
+    }
+    var needFitSize: Bool = false
+    
     var host: UIView?
     
     var margin: Margin = .value(v: 0)
@@ -375,7 +403,7 @@ class FlexLine: FlexSubBox{
             break
         }
         self.subBoxs.forEach { (i) in
-            i.host?.frame = i.resultRect
+            i.storeRect(result: i.resultRect)
         }
     }
 }

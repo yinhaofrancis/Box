@@ -29,12 +29,22 @@ public enum BlockDisplay{
     case block
 }
 
-public protocol BlockItem {
+public protocol BlockItem {        
     var margin:Margin { get }
     var padding:Margin { get }
     var display:BlockDisplay { get }
 }
 public class BlockBox:Box{
+    public func fixSize() {
+        
+    }
+    
+    public func storeRect(result: CGRect) {
+        
+    }
+    
+    public var needFitSize: Bool = false
+    
     
     weak public var host: UIView?
     

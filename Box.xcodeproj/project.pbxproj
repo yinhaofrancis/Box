@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A93FC32120EE7E7D00C12F4B /* BlockBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32020EE7E7D00C12F4B /* BlockBox.swift */; };
 		A93FC32320EE7E8900C12F4B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32220EE7E8900C12F4B /* Type.swift */; };
 		A93FC32520F06C0600C12F4B /* FlexBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32420F06C0600C12F4B /* FlexBoxView.swift */; };
 		A9B1C77620ED1BE500A11593 /* Box.h in Headers */ = {isa = PBXBuildFile; fileRef = A9B1C77420ED1BE500A11593 /* Box.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,6 +18,7 @@
 		A9B1C79220ED1C4200A11593 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B1C77120ED1BE500A11593 /* Box.framework */; };
 		A9B1C79320ED1C4200A11593 /* Box.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9B1C77120ED1BE500A11593 /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9B1C79820ED1C8900A11593 /* FlexBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1C79720ED1C8900A11593 /* FlexBox.swift */; };
+		A9F0A3BA20F0FC5100365C8F /* BlockBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32020EE7E7D00C12F4B /* BlockBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,7 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B1C79820ED1C8900A11593 /* FlexBox.swift in Sources */,
-				A93FC32120EE7E7D00C12F4B /* BlockBox.swift in Sources */,
+				A9F0A3BA20F0FC5100365C8F /* BlockBox.swift in Sources */,
 				A93FC32320EE7E8900C12F4B /* Type.swift in Sources */,
 				A93FC32520F06C0600C12F4B /* FlexBoxView.swift in Sources */,
 			);

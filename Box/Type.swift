@@ -12,10 +12,14 @@ public protocol Rect{
     var width:CGFloat? {get set}
     var height:CGFloat? {get set}
     func layout()
+    var needFitSize:Bool {get}
+    func storeRect(result:CGRect)
+    func fixSize()
 }
 
 public protocol UIExtension:class{
-    var host:UIView? {get set}
+    associatedtype T:UIView
+    var host:T? {get set}
 }
 
 public protocol LayoutBox:class{
@@ -37,8 +41,8 @@ extension LayoutBox{
     }
 }
 
-public typealias FlexSubBox = FlexItem & LayoutBox & Rect & UIExtension
+public typealias FlexSubBox = FlexItem & LayoutBox & Rect
 
-public typealias BlockSubBox = BlockItem & LayoutBox & Rect & UIExtension
+public typealias BlockSubBox = BlockItem & LayoutBox & Rect
 
 public typealias Box = FlexSubBox & BlockSubBox
