@@ -9,9 +9,13 @@
 import QuartzCore
 
 public protocol Rect{
-    var width:CGFloat {get set}
-    var height:CGFloat {get set}
+    var width:CGFloat? {get set}
+    var height:CGFloat? {get set}
     func layout()
+}
+
+public protocol UIExtension:class{
+    var host:UIView? {get set}
 }
 
 public protocol LayoutBox:class{
@@ -28,8 +32,8 @@ extension LayoutBox{
     }
 }
 
-public typealias Box = FlexItem & LayoutBox & Rect & BlockItem
+public typealias FlexSubBox = FlexItem & LayoutBox & Rect & UIExtension
 
-public typealias FlexSubBox = FlexItem & LayoutBox & Rect
+public typealias BlockSubBox = BlockItem & LayoutBox & Rect & UIExtension
 
-public typealias BlockSubBox = BlockItem & LayoutBox & Rect
+public typealias Box = FlexSubBox & BlockSubBox

@@ -17,18 +17,13 @@ class ViewController: UIViewController {
         let base = FlexBox(width: self.view.frame.width, height: self.view.frame.height);
         base.justifyContent = .end
         base.alignContent = .between
-        base.alignItem = .start
+        base.alignItem = .stretch
 //        base.wrap = true
-        let a = FlexBox(width: 150, height: 60);
-        let b = FlexBox(width: 150, height: 70);
-        b.shrink = 2
-        a.shrink = 1
-        let c = FlexBox(width: 150, height: 80);
-        a.alignSelf = .end
-        let d = FlexBox(width: 150, height: 90);
+        let a = FlexBox(width: 100, height: nil);
+        let b = FlexBox(width: 100, height: nil);
+        let c = FlexBox(width: 100, height: nil);
+        let d = FlexBox(width: 150, height: nil);
         base.subBoxs = [a,b,c]
-        b.alignSelf = .center
-        
         base.layout()
         base.subBoxs.forEach { (i) in
             let v = UIView(frame: i.resultRect)

@@ -34,7 +34,9 @@ public protocol BlockItem {
     var padding:Margin { get }
     var display:BlockDisplay { get }
 }
-public class BlockBox:LayoutBox,FlexItem,BlockItem,Rect{
+public class BlockBox:Box{
+    
+    weak public var host: UIView?
     
     public var resultX: CGFloat
     
@@ -56,17 +58,17 @@ public class BlockBox:LayoutBox,FlexItem,BlockItem,Rect{
     
     public var display: BlockDisplay = .block
     
-    public var width: CGFloat
+    public var width: CGFloat?
     
-    public var height: CGFloat
+    public var height: CGFloat?
     
-    public init(width:CGFloat,height:CGFloat){
+    public init(width:CGFloat?,height:CGFloat?){
         resultX = 0
         resultY = 0
-        self.width = width
-        self.height = height
-        resultW = width
-        resultH = height
+        self.width = width ?? 0
+        self.height = height ?? 0
+        resultW = width ?? 0
+        resultH = height ?? 0
     }
     public func layout() {
         
