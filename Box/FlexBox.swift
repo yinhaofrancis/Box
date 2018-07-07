@@ -49,7 +49,6 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     public var subBoxs: [Box] = []
     
     public func addSubBox(box: Box) {
-        lines.removeAll()
         self.subBoxs.append(box)
     }
     public var host: T?
@@ -94,7 +93,7 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     
     var selfLine:FlexLine?
     
-    public var needFitSize:Bool = false;
+//    public var needFitSize:Bool = false;
     
     public init(width:CGFloat?,height:CGFloat?){
         self.width = width;
@@ -107,9 +106,7 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     public func layout(){
         
         self.subBoxs.forEach { (i) in
-            if (i.needFitSize){
-                i.fixSize()
-            }
+            i.fixSize()
             i.layout()
         }
         if(wrap){

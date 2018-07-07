@@ -45,12 +45,6 @@ public class FlexBoxView: UIView {
         layout.host = self
         
     }
-    public override func addSubview(_ view: UIView) {
-        if let v = view as? FlexBoxView{
-            self.layout.addSubBox(box: v.layout)
-        }
-        super.addSubview(view)
-    }
     public override func layoutSubviews() {
         if self.autoLayout{
             self.layout.width = self.frame.width
@@ -60,14 +54,21 @@ public class FlexBoxView: UIView {
         }
     }
     public func makeSubView<T:UIView>(width:CGFloat?,height:CGFloat?,type:T.Type)->FlexBox<T>{
-        let f = FlexBox<T>(width: width, height: height);
-        let v = T(frame: CGRect(x: 0, y: 0, width: width ?? 0, height: height ?? 0));
-        if let container = v as? FlexBoxView{
-            container.autoLayout = false
+        
+        
+        let v = T(frame: CGRect(x: 0, y: 0, width: width ?? 0, height: height ?? 0))
+        if let fv = v as? FlexBoxView{
+            fv.autoLayout = false
+            self.layout.addSubBox(box: fv.layout)
+            self.addSubview(fv)
+            return fv.layout as! FlexBox<T>
+        }else{
+            let f = FlexBox<T>(width: width, height: height)
+            self.layout.addSubBox(box: f)
+            self.addSubview(v)
+            f.host = v
+            return f
         }
-        self.layout.addSubBox(box: f)
-        self.addSubview(v)
-        f.host = v
-        return f
+        
     }
 }

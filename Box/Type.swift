@@ -12,7 +12,6 @@ public protocol Rect{
     var width:CGFloat? {get set}
     var height:CGFloat? {get set}
     func layout()
-    var needFitSize:Bool {get}
     func storeRect(result:CGRect)
     func fixSize()
 }

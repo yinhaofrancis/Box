@@ -11,30 +11,31 @@ import Box
 class ViewController: UIViewController {
 
     @IBOutlet weak var v: FlexBoxView!
+    var flex:FlexBox<FlexBoxView>!
     override func viewDidLoad() {
         super.viewDidLoad()
-        v.layout.justifyContent = .start
-        v.layout.alignItem = .start
-        self.view.addSubview(v)
-        for i in 0 ..< 2 {
-            let c = v.makeSubView(width: nil, height: nil, type: UILabel.self)
-            c.host?.text = "asdasdasdasd"
-            c.host?.numberOfLines = 1
-            c.needFitSize = true
+        v.layout.justifyContent = .center
+        v.layout.alignItem = .center
+        
+        
+        flex = v.makeSubView(width: 320, height: 560, type: FlexBoxView.self)
+        flex.justifyContent = .center;
+        flex.host?.backgroundColor = UIColor.white;
+        
+        for _ in 0 ..< 2 {
+            let c = flex.host?.makeSubView(width: 20, height: nil, type: UILabel.self)
+            c?.host?.text = "asdasdasdasd"
+            c?.host?.numberOfLines = 0
         }
-
-        let c = v.makeSubView(width: 88, height: 50, type: UIImageView.self)
-        c.host?.image = #imageLiteral(resourceName: "f")
-        c.host?.contentMode = .scaleAspectFit
-        c.host?.clipsToBounds = true
+        flex.layout()
+        let c = flex.host?.makeSubView(width: 88, height: 50, type: UIImageView.self)
+        c?.host?.image = #imageLiteral(resourceName: "f")
+        c?.host?.contentMode = .scaleAspectFit
+        c?.host?.clipsToBounds = true
+        v.layout.layout()
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.v.layout.wrap = true
-        self.v.layout.justifyContent = .evenly
-        self.v.layout.alignContent = .stretch
-        UIView.animate(withDuration: 0.5) {
-            self.v.layout.layout()
-        }
+
     }
 }
 
