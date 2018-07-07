@@ -7,6 +7,19 @@
 //
 
 import UIKit
+extension UIView{
+    func applyResult(rect:CGRect){
+        if let s = self as? FlexBoxView{
+            if !s.autoLayout{
+                self.frame = rect
+            }
+        }else{
+            self.frame = rect
+        }
+        
+    }
+}
+
 @IBDesignable
 public class FlexBoxView: UIView {
     
@@ -26,7 +39,11 @@ public class FlexBoxView: UIView {
         layout.host = self
     }
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        layout = FlexBox(width:0 , height: 0)
+        autoLayout = true
+        super.init(coder: aDecoder)
+        layout.host = self
+        
     }
     public override func addSubview(_ view: UIView) {
         if let v = view as? FlexBoxView{
@@ -36,7 +53,10 @@ public class FlexBoxView: UIView {
     }
     public override func layoutSubviews() {
         if self.autoLayout{
+            self.layout.width = self.frame.width
+            self.layout.height = self.frame.height
             self.layout.layout()
+            
         }
     }
     public func makeSubView<T:UIView>(width:CGFloat?,height:CGFloat?,type:T.Type)->FlexBox<T>{
@@ -50,5 +70,4 @@ public class FlexBoxView: UIView {
         f.host = v
         return f
     }
-    
 }

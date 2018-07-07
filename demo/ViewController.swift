@@ -10,13 +10,11 @@ import UIKit
 import Box
 class ViewController: UIViewController {
 
-    var v: FlexBoxView!
+    @IBOutlet weak var v: FlexBoxView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.v = FlexBoxView(frame: UIScreen.main.bounds)
-        v.backgroundColor = UIColor.white
         v.layout.justifyContent = .start
-        v.layout.alignItem = .end
+        v.layout.alignItem = .start
         self.view.addSubview(v)
         for i in 0 ..< 2 {
             let c = v.makeSubView(width: nil, height: nil, type: UILabel.self)
@@ -24,7 +22,7 @@ class ViewController: UIViewController {
             c.host?.numberOfLines = 1
             c.needFitSize = true
         }
-        
+
         let c = v.makeSubView(width: 88, height: 50, type: UIImageView.self)
         c.host?.image = #imageLiteral(resourceName: "f")
         c.host?.contentMode = .scaleAspectFit

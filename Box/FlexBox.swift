@@ -44,7 +44,7 @@ public protocol FlexBoxItem{
 
 public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     public func storeRect(result: CGRect) {
-        self.host?.frame = result
+        self.host?.applyResult(rect: result)
     }
     public var subBoxs: [Box] = []
     
@@ -143,7 +143,7 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
                 l.layout()
             }
         }
-        self.host?.frame = self.resultRect
+        self.storeRect(result: self.resultRect)
     }
     func seperatedLines(subBox:[FlexSubBox],
                     sumKeyPath:KeyPath<Rect,CGFloat?>)->[FlexLine]{
