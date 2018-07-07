@@ -43,7 +43,7 @@ public class FlexBoxView: UIView {
         let f = FlexBox<T>(width: width, height: height);
         let v = T(frame: CGRect(x: 0, y: 0, width: width ?? 0, height: height ?? 0));
         if let container = v as? FlexBoxView{
-            container.autoLayout = true
+            container.autoLayout = false
         }
         self.layout.addSubBox(box: f)
         self.addSubview(v)

@@ -53,12 +53,6 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
         self.subBoxs.append(box)
     }
     public var host: T?
-
-    public var margin: Margin = .value(v: 0)
-    
-    public var padding: Margin = .value(v: 0)
-    
-    public var display: BlockDisplay = .block
     
     public var direction: FlexDirection = .row
     
@@ -195,6 +189,15 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
             
         }
     }
+    
+    
+    // for block
+    
+    public var margin: Margin = .value(v: 0)
+    
+    public var padding: Margin = .value(v: 0)
+    
+    public var display: BlockDisplay = .block
 }
 class FlexLine: FlexSubBox{
     func fixSize() {
