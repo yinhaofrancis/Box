@@ -10,26 +10,34 @@ import UIKit
 import Box
 class ViewController: UIViewController {
 
+    var v: FlexBoxView!
+    var v2: FlexBoxView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        let base = FlexBox(width: self.view.frame.width, height: self.view.frame.height);
-        base.justifyContent = .end
-        base.alignContent = .between
-        base.alignItem = .stretch
-//        base.wrap = true
-        let a = FlexBox(width: 100, height: nil);
-        let b = FlexBox(width: 100, height: nil);
-        let c = FlexBox(width: 100, height: nil);
-        let d = FlexBox(width: 150, height: nil);
-        base.subBoxs = [a,b,c]
-        base.layout()
-        base.subBoxs.forEach { (i) in
-            let v = UIView(frame: i.resultRect)
-            v.backgroundColor = UIColor.red;
-            self.view.addSubview(v);
+        self.v = FlexBoxView(frame: UIScreen.main.bounds)
+        v.backgroundColor = UIColor.white
+        v.layout.alignItem = .stretch
+        self.view.addSubview(v)
+        for i in 0 ..< 20 {
+            let s = CGSize(width: 20 + i, height: 20 + i)
+            let vv = FlexBoxView(frame: CGRect(origin: .zero, size: s))
+            vv.backgroundColor = UIColor.blue
+            vv.layout.height = nil
+            self.v.addSubview(vv)
+
         }
+        self.v2 = FlexBoxView(frame: CGRect(origin: .zero, size: CGSize(width: 60, height: UIScreen.main.bounds.height / 1.5)))
+        self.v2.backgroundColor = UIColor.red
+        self.v.addSubview(v2)
+        self.v.layout.layout()
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.v.layout.wrap = true
+        self.v2.layout.grow = 1
+//        self.v.layout.alignItem = .center
+        self.v.layout.justifyContent = .evenly
+        self.v.layout.alignContent = .stretch
+        self.v.layout.layout()
     }
 }
 

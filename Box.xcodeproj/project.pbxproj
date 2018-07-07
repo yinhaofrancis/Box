@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A93FC32120EE7E7D00C12F4B /* BlockBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32020EE7E7D00C12F4B /* BlockBox.swift */; };
 		A93FC32320EE7E8900C12F4B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32220EE7E8900C12F4B /* Type.swift */; };
+		A93FC32520F06C0600C12F4B /* FlexBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32420F06C0600C12F4B /* FlexBoxView.swift */; };
 		A9B1C77620ED1BE500A11593 /* Box.h in Headers */ = {isa = PBXBuildFile; fileRef = A9B1C77420ED1BE500A11593 /* Box.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9B1C78320ED1BF400A11593 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1C78220ED1BF400A11593 /* AppDelegate.swift */; };
 		A9B1C78520ED1BF400A11593 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1C78420ED1BF400A11593 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		A93FC32020EE7E7D00C12F4B /* BlockBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockBox.swift; sourceTree = "<group>"; };
 		A93FC32220EE7E8900C12F4B /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		A93FC32420F06C0600C12F4B /* FlexBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexBoxView.swift; sourceTree = "<group>"; };
 		A9B1C77120ED1BE500A11593 /* Box.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Box.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B1C77420ED1BE500A11593 /* Box.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		A9B1C77520ED1BE500A11593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				A9B1C79720ED1C8900A11593 /* FlexBox.swift */,
 				A93FC32020EE7E7D00C12F4B /* BlockBox.swift */,
 				A93FC32220EE7E8900C12F4B /* Type.swift */,
+				A93FC32420F06C0600C12F4B /* FlexBoxView.swift */,
 			);
 			path = Box;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				A9B1C79820ED1C8900A11593 /* FlexBox.swift in Sources */,
 				A93FC32120EE7E7D00C12F4B /* BlockBox.swift in Sources */,
 				A93FC32320EE7E8900C12F4B /* Type.swift in Sources */,
+				A93FC32520F06C0600C12F4B /* FlexBoxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +418,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Box/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,7 +445,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Box/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +466,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27ZYBRBPV8;
 				INFOPLIST_FILE = demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,7 +485,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27ZYBRBPV8;
 				INFOPLIST_FILE = demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

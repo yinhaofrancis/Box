@@ -26,6 +26,11 @@ public protocol LayoutBox:class{
     var resultRect:CGRect {get}
 }
 
+public protocol Container{
+    var subBoxs:[Box] {get}
+    func addSubBox(box:Box)
+}
+
 extension LayoutBox{
     public var resultRect:CGRect{
         return CGRect(x: resultX, y: resultY, width: resultW, height: resultH)

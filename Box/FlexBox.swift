@@ -35,7 +35,6 @@ public protocol FlexItem{
 public protocol FlexLineItem{
     var justifyContent:Justify {get}
     var alignItem:Align {get}
-    var subBoxs:[FlexSubBox] {get}
     var direction :FlexDirection {get}
 }
 public protocol FlexBoxItem{
@@ -43,9 +42,15 @@ public protocol FlexBoxItem{
     var alignContent:Justify {get}
 }
 
-public class FlexBox: Box,FlexLineItem,FlexBoxItem {
+public class FlexBox: Box,FlexLineItem,FlexBoxItem,Container {
     
-    weak public var host: UIView?
+    public var subBoxs: [Box] = []
+    
+    public func addSubBox(box: Box) {
+        lines.removeAll()
+        self.subBoxs.append(box)
+    }
+    public var host: UIView?
 
     public var margin: Margin = .value(v: 0)
     
@@ -55,11 +60,17 @@ public class FlexBox: Box,FlexLineItem,FlexBoxItem {
     
     public var direction: FlexDirection = .row
     
-    public var subBoxs: [FlexSubBox] = []
+    public var width: CGFloat?{
+        didSet{
+            resultW = self.width ?? 0
+        }
+    }
     
-    public var width: CGFloat?
-    
-    public var height: CGFloat?
+    public var height: CGFloat?{
+        didSet{
+            resultH = self.height ?? 0
+        }
+    }
     
     public var resultX: CGFloat
     
@@ -87,6 +98,7 @@ public class FlexBox: Box,FlexLineItem,FlexBoxItem {
     
     var selfLine:FlexLine?
     
+    
     public init(width:CGFloat?,height:CGFloat?){
         self.width = width;
         self.height = height;
@@ -96,6 +108,9 @@ public class FlexBox: Box,FlexLineItem,FlexBoxItem {
         self.resultH = height ?? 0;
     }
     public func layout(){
+        self.subBoxs.forEach { (i) in
+            i.layout()
+        }
         if(wrap){
             switch(self.direction){
             case .row:
@@ -127,6 +142,7 @@ public class FlexBox: Box,FlexLineItem,FlexBoxItem {
                 l.layout()
             }
         }
+        self.host?.frame = self.resultRect
     }
     func seperatedLines(subBox:[FlexSubBox],
                     sumKeyPath:KeyPath<Rect,CGFloat?>)->[FlexLine]{
@@ -358,6 +374,8 @@ class FlexLine: FlexSubBox{
             self.calcAlignItem(keyYKeyPath: \LayoutBox.resultX, keyHKeyPath: \LayoutBox.resultW, alignItem: self.alignItem, sourceYKeyPath: \LayoutBox.resultX, sourceHKeyPath: \Rect.width, subBox: self.subBoxs)
             break
         }
-        
+        self.subBoxs.forEach { (i) in
+            i.host?.frame = i.resultRect
+        }
     }
 }
