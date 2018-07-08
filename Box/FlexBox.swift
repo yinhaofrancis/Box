@@ -93,7 +93,7 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     
     var selfLine:FlexLine?
     
-//    public var needFitSize:Bool = false;
+    public var needFitSize:Bool = false;
     
     public init(width:CGFloat?,height:CGFloat?){
         self.width = width;
@@ -104,9 +104,10 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
         self.resultH = height ?? 0;
     }
     public func layout(){
-        
         self.subBoxs.forEach { (i) in
-            i.fixSize()
+            if (needFitSize){
+                i.fixSize()
+            }
             i.layout()
         }
         if(wrap){

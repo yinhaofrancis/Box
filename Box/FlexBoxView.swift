@@ -27,7 +27,7 @@ public class FlexBoxView: UIView {
     public var layout:FlexBox<FlexBoxView>
     public override init(frame: CGRect) {
         layout = FlexBox(width: frame.width < 0 ? nil : frame.width, height: frame.height < 0 ? nil : frame.height)
-        autoLayout = true
+        autoLayout = false
         super.init(frame: frame)
         layout.host = self
     }
@@ -37,6 +37,7 @@ public class FlexBoxView: UIView {
         autoLayout = root;
         super.init(frame: frame)
         layout.host = self
+        autoLayout = false;
     }
     required public init?(coder aDecoder: NSCoder) {
         layout = FlexBox(width:0 , height: 0)
