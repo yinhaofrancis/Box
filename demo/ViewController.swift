@@ -45,7 +45,8 @@ class ViewController: UIViewController {
         }
         for i in (0..<count) {
             let a = v.makeSubView(width: width, height: height, type: UIView.self)
-            
+            a.host?.layer.borderColor = UIColor.black.cgColor
+            a.host?.layer.borderWidth = 1
             if i % 3 == 0{
                 a.host?.backgroundColor = UIColor.red
             }
