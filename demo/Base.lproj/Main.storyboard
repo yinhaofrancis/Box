@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--DEMO-->
+        <!--FlexBox-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -189,7 +189,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="DEMO" id="wXU-de-nEW"/>
+                    <navigationItem key="navigationItem" title="FlexBox" largeTitleDisplayMode="never" id="wXU-de-nEW"/>
                     <connections>
                         <outlet property="alignC" destination="WLA-f4-qik" id="nG8-SC-75n"/>
                         <outlet property="alignItem" destination="OJw-7t-X2z" id="Uxm-sP-qCa"/>
