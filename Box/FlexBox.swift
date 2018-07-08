@@ -105,7 +105,7 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     }
     public func layout(){
         self.subBoxs.forEach { (i) in
-            if (needFitSize){
+            if (i.needFitSize){
                 i.fixSize()
             }
             i.layout()
