@@ -35,6 +35,8 @@ public protocol BlockItem {
     var display:BlockDisplay { get }
 }
 public class BlockBox:Box{
+    public var relativePostion: Relative = .none
+    
     public func fixSize() {
         
     }
@@ -80,6 +82,9 @@ public class BlockBox:Box{
         resultW = width ?? 0
         resultH = height ?? 0
     }
+    
+    public var subBoxs: [Box] = []
+    
     public func layout() {
         
     }

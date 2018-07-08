@@ -21,6 +21,23 @@ public protocol UIExtension:class{
     associatedtype T:UIView
     var host:T? {get set}
 }
+public struct Relative{
+    public var left:CGFloat?
+    public var top:CGFloat?
+    
+    public var right:CGFloat?
+    public var bottom:CGFloat?
+    
+    static public var none:Relative{
+        return Relative(left: nil, top: nil, right: nil, bottom: nil)
+    }
+    static public func leftTop(left: CGFloat?, top: CGFloat?)->Relative{
+        return Relative(left: left, top: top, right: nil, bottom: nil)
+    }
+    static public func bottonRight(bottom: CGFloat?, right: CGFloat?)->Relative{
+        return Relative(left: nil, top: nil, right: right, bottom: bottom)
+    }
+}
 
 public protocol LayoutBox:class{
     var resultX:CGFloat {get set}
@@ -28,6 +45,7 @@ public protocol LayoutBox:class{
     var resultW:CGFloat {get set}
     var resultH:CGFloat {get set}
     var resultRect:CGRect {get}
+    var relativePostion:Relative {get}
 }
 
 public protocol Container{
@@ -37,7 +55,23 @@ public protocol Container{
 
 extension LayoutBox{
     public var resultRect:CGRect{
-        return CGRect(x: resultX, y: resultY, width: resultW, height: resultH)
+        var xValue:CGFloat? = 0
+        var yValue:CGFloat? = 0
+        if let l = self.relativePostion.left{
+            xValue = l
+        }
+    
+        if let t = self.relativePostion.top{
+            yValue = t
+        }
+        
+        if let r = self.relativePostion.right,xValue == nil{
+            xValue = -r
+        }
+        if let b = self.relativePostion.bottom ,yValue == nil{
+            yValue = -b
+        }
+        return CGRect(x: resultX + (xValue ?? 0), y: resultY + (yValue ?? 0), width: resultW, height: resultH)
     }
 }
 

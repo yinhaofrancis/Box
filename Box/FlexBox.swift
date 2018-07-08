@@ -43,6 +43,8 @@ public protocol FlexBoxItem{
 }
 
 public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
+    public var relativePostion: Relative = .none
+    
     public func storeRect(result: CGRect) {
         self.host?.applyResult(rect: result)
     }
@@ -198,6 +200,8 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     public var display: BlockDisplay = .block
 }
 class FlexLine: FlexSubBox{
+    var relativePostion: Relative = .none
+    
     func fixSize() {
         
     }
