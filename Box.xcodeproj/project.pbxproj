@@ -22,7 +22,6 @@
 		A9BD529D20F2328B00D85EDD /* growViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD529C20F2328B00D85EDD /* growViewController.swift */; };
 		A9BD529F20F238D000D85EDD /* shrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD529E20F238D000D85EDD /* shrinkViewController.swift */; };
 		A9BD52A120F240B900D85EDD /* autoSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD52A020F240B900D85EDD /* autoSizeViewController.swift */; };
-		A9F0A3BA20F0FC5100365C8F /* BlockBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32020EE7E7D00C12F4B /* BlockBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A93FC32020EE7E7D00C12F4B /* BlockBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockBox.swift; sourceTree = "<group>"; };
 		A93FC32220EE7E8900C12F4B /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		A93FC32420F06C0600C12F4B /* FlexBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexBoxView.swift; sourceTree = "<group>"; };
 		A9B1C77120ED1BE500A11593 /* Box.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Box.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +111,6 @@
 				A9B1C77420ED1BE500A11593 /* Box.h */,
 				A9B1C77520ED1BE500A11593 /* Info.plist */,
 				A9B1C79720ED1C8900A11593 /* FlexBox.swift */,
-				A93FC32020EE7E7D00C12F4B /* BlockBox.swift */,
 				A93FC32220EE7E8900C12F4B /* Type.swift */,
 				A93FC32420F06C0600C12F4B /* FlexBoxView.swift */,
 			);
@@ -252,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B1C79820ED1C8900A11593 /* FlexBox.swift in Sources */,
-				A9F0A3BA20F0FC5100365C8F /* BlockBox.swift in Sources */,
 				A93FC32320EE7E8900C12F4B /* Type.swift in Sources */,
 				A93FC32520F06C0600C12F4B /* FlexBoxView.swift in Sources */,
 			);
@@ -484,7 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27ZYBRBPV8;
 				INFOPLIST_FILE = demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -504,7 +500,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27ZYBRBPV8;
 				INFOPLIST_FILE = demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

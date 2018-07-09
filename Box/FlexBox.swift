@@ -107,9 +107,7 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     }
     public func layout(){
         self.subBoxs.forEach { (i) in
-            if (i.needFitSize){
-                i.fixSize()
-            }
+            i.fixSize()
             i.layout()
         }
         if(wrap){
@@ -177,7 +175,7 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
         return lines;
     }
     public func fixSize() {
-        if let h = self.host{
+        if let h = self.host,needFitSize{
             let size = CGSize(width: self.width ?? .infinity, height: self.height ?? .infinity)
             let fitsize = h.sizeThatFits(size)
             if self.width == nil{
@@ -186,18 +184,11 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
             if(self.height == nil){
                 self.height = fitsize.height
             }
-            
         }
     }
     
     
     // for block
-    
-    public var margin: Margin = .value(v: 0)
-    
-    public var padding: Margin = .value(v: 0)
-    
-    public var display: BlockDisplay = .block
 }
 class FlexLine: FlexSubBox{
     var relativePostion: Relative = .none
@@ -211,12 +202,6 @@ class FlexLine: FlexSubBox{
     var needFitSize: Bool = false
     
     var host: UIView?
-    
-    var margin: Margin = .value(v: 0)
-    
-    var padding: Margin = .value(v: 0)
-    
-    var display: BlockDisplay = .block
     
     var direction: FlexDirection
     

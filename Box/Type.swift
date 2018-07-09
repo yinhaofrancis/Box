@@ -77,6 +77,4 @@ extension LayoutBox{
 
 public typealias FlexSubBox = FlexItem & LayoutBox & Rect
 
-public typealias BlockSubBox = BlockItem & LayoutBox & Rect
-
-public typealias Box = FlexSubBox & BlockSubBox
+public typealias Box = FlexSubBox
