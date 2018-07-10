@@ -108,16 +108,15 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     public func layout(){
         self.subBoxs.forEach { (i) in
             i.fixSize()
-            i.layout()
         }
         if(wrap){
             switch(self.direction){
             case .row:
-                lines = seperatedLines(subBox: self.subBoxs, sumKeyPath: \Rect.width)
+                lines = seperatedLines(subBox: self.subBoxs, sumKeyPath: \LayoutBox.resultW)
                 selfLine = FlexLine(width: width, height: height, justifyContent: alignContent, alignItem: .stretch, subBoxs: lines, direction: .column)
                 break;
             case .column:
-                lines = seperatedLines(subBox: self.subBoxs, sumKeyPath: \Rect.height)
+                lines = seperatedLines(subBox: self.subBoxs, sumKeyPath: \LayoutBox.resultH)
                 selfLine = FlexLine(width: width, height: height, justifyContent: alignContent, alignItem: .stretch, subBoxs: lines, direction: .row)
                 break;
             }
@@ -136,20 +135,23 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
             }
             
         }else{
-            self.lines = [FlexLine(width: self.width, height: self.height, justifyContent: self.justifyContent, alignItem: alignItem, subBoxs: self.subBoxs, direction: self.direction)]
+            self.lines = [FlexLine(width: resultW, height: resultH, justifyContent: self.justifyContent, alignItem: alignItem, subBoxs: self.subBoxs, direction: self.direction)]
             self.lines.forEach { (l) in
                 l.layout()
             }
         }
         self.storeRect(result: self.resultRect)
+        self.subBoxs.forEach { (i) in
+            i.layout()
+        }
     }
     func seperatedLines(subBox:[FlexSubBox],
-                    sumKeyPath:KeyPath<Rect,CGFloat?>)->[FlexLine]{
+                    sumKeyPath:KeyPath<LayoutBox,CGFloat>)->[FlexLine]{
         var sum:CGFloat = 0
         var lines:[FlexLine] = []
         var lastStart:Int = 0
         for i in (0..<subBox.count){
-            if (sum + (subBox[i][keyPath:sumKeyPath] ?? 0)) > (self[keyPath:sumKeyPath] ?? 0){
+            if (sum + (subBox[i][keyPath:sumKeyPath])) > (self[keyPath:sumKeyPath]){
                 if(i == lastStart){
                     let f = FlexLine(width: self.width, height: self.height, justifyContent: self.justifyContent, alignItem: self.alignItem, subBoxs: [subBox[i]], direction: self.direction)
                     lines.append(f);
@@ -160,10 +162,10 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
                     let f = FlexLine(width: self.width, height: self.height, justifyContent: self.justifyContent, alignItem: self.alignItem, subBoxs: a, direction: self.direction)
                     lines.append(f);
                     lastStart = i
-                    sum = (subBox[i][keyPath:sumKeyPath] ?? 0)
+                    sum = (subBox[i][keyPath:sumKeyPath])
                 }
             }else{
-                sum += (subBox[i][keyPath:sumKeyPath] ?? 0)
+                sum += (subBox[i][keyPath:sumKeyPath])
             }
         }
         if (lastStart < subBoxs.count){

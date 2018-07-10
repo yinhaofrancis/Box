@@ -22,6 +22,7 @@
 		A9BD529D20F2328B00D85EDD /* growViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD529C20F2328B00D85EDD /* growViewController.swift */; };
 		A9BD529F20F238D000D85EDD /* shrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD529E20F238D000D85EDD /* shrinkViewController.swift */; };
 		A9BD52A120F240B900D85EDD /* autoSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD52A020F240B900D85EDD /* autoSizeViewController.swift */; };
+		A9BD52A320F4F57400D85EDD /* demoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD52A220F4F57400D85EDD /* demoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		A9BD529C20F2328B00D85EDD /* growViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = growViewController.swift; sourceTree = "<group>"; };
 		A9BD529E20F238D000D85EDD /* shrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shrinkViewController.swift; sourceTree = "<group>"; };
 		A9BD52A020F240B900D85EDD /* autoSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = autoSizeViewController.swift; sourceTree = "<group>"; };
+		A9BD52A220F4F57400D85EDD /* demoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				A9BD529A20F22B0F00D85EDD /* detailViewController.swift */,
 				A9BD529C20F2328B00D85EDD /* growViewController.swift */,
 				A9BD52A020F240B900D85EDD /* autoSizeViewController.swift */,
+				A9BD52A220F4F57400D85EDD /* demoVC.swift */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				A9BD529D20F2328B00D85EDD /* growViewController.swift in Sources */,
 				A9BD52A120F240B900D85EDD /* autoSizeViewController.swift in Sources */,
 				A9B1C78320ED1BF400A11593 /* AppDelegate.swift in Sources */,
+				A9BD52A320F4F57400D85EDD /* demoVC.swift in Sources */,
 				A9BD529F20F238D000D85EDD /* shrinkViewController.swift in Sources */,
 				A9BD529B20F22B0F00D85EDD /* detailViewController.swift in Sources */,
 			);

@@ -190,6 +190,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="FlexBox" largeTitleDisplayMode="never" id="wXU-de-nEW">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="LOj-AL-VgE">
+                            <connections>
+                                <segue destination="MLd-EZ-6hk" kind="presentation" id="dil-En-IOt"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="细节" id="IxL-3k-IVb">
                             <connections>
                                 <segue destination="Izl-wx-Cxt" kind="show" id="CXM-9s-6DZ"/>
@@ -229,6 +234,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRa-G7-axI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="32.512315270935964"/>
+        </scene>
+        <!--DemoVC-->
+        <scene sceneID="nvB-tL-d4h">
+            <objects>
+                <viewController id="MLd-EZ-6hk" customClass="demoVC" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhk-Ou-3Dk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVx-Rp-MSd" customClass="FlexBoxView" customModule="Box">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PVx-Rp-MSd" firstAttribute="leading" secondItem="I2N-9X-YTO" secondAttribute="leading" id="YCR-Wg-nHO"/>
+                            <constraint firstItem="PVx-Rp-MSd" firstAttribute="trailing" secondItem="I2N-9X-YTO" secondAttribute="trailing" id="YaM-nB-cnJ"/>
+                            <constraint firstItem="PVx-Rp-MSd" firstAttribute="top" secondItem="I2N-9X-YTO" secondAttribute="top" id="pLB-CS-4ib"/>
+                            <constraint firstItem="PVx-Rp-MSd" firstAttribute="bottom" secondItem="I2N-9X-YTO" secondAttribute="bottom" id="zIa-Ha-2Jx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I2N-9X-YTO"/>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="PVx-Rp-MSd" id="GMT-Rc-KxX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zog-Pj-qIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973.60000000000002" y="-609.60591133004925"/>
         </scene>
         <!--细节-->
         <scene sceneID="KPe-Cj-t5B">

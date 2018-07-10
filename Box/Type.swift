@@ -55,8 +55,8 @@ public protocol Container{
 
 extension LayoutBox{
     public var resultRect:CGRect{
-        var xValue:CGFloat? = 0
-        var yValue:CGFloat? = 0
+        var xValue:CGFloat?
+        var yValue:CGFloat?
         if let l = self.relativePostion.left{
             xValue = l
         }
