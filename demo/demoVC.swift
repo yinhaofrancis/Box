@@ -19,11 +19,16 @@ class demoVC: UIViewController {
 
 extension demoVC{
     func makeNav(){
+        self.container.layout.direction = .column
+        self.container.layout.alignContent = .stretch
+        self.container.layout.alignItem = .stretch
         let naviInfo = self.container.makeSubView(width: nil, height: 44, type: FlexBoxView.self)
-        naviInfo.grow = 1;
+        
+        let contentInfo = self.container.makeSubView(width: nil, height: 10, type: FlexBoxView.self)
+        contentInfo.host?.backgroundColor = UIColor.black
+        contentInfo.grow = 1;
 //        naviInfo.justifyContent = .between
         naviInfo.host?.backgroundColor = UIColor.gray
-        
         let btnInfo = naviInfo.host?.makeSubView(width: nil, height: 44, type: UIButton.self)
         btnInfo?.host?.setTitle("left", for: .normal)
         btnInfo?.needFitSize = true

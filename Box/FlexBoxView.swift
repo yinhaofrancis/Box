@@ -60,6 +60,8 @@ public class FlexBoxView: UIView {
         let v = T(frame: CGRect(x: 0, y: 0, width: width ?? 0, height: height ?? 0))
         if let fv = v as? FlexBoxView{
             fv.autoLayout = false
+            fv.layout.width = width
+            fv.layout.height = height
             self.layout.addSubBox(box: fv.layout)
             self.addSubview(fv)
             return fv.layout as! FlexBox<T>

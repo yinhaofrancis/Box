@@ -215,9 +215,17 @@ class FlexLine: FlexSubBox{
     
     var resultH: CGFloat
     
-    var width: CGFloat?
+    var width: CGFloat?{
+        didSet{
+            print("ok")
+        }
+    }
     
-    var height: CGFloat?
+    var height: CGFloat?{
+        didSet{
+            print("ok")
+        }
+    }
     
     var grow: Int = 1
     
