@@ -43,5 +43,9 @@ extension demoVC{
         btn2Info?.host?.setTitle("right", for: .normal)
         btn2Info?.relativePostion = .bottonRight(bottom: nil, right: 8)
         lblInfo?.host?.text = "title";
+        btn2Info?.host?.addTarget(self, action: #selector(back), for: .touchUpInside)
+    }
+    @objc func back(){
+        self.dismiss(animated: true, completion: nil)
     }
 }
