@@ -25,7 +25,7 @@ extension demoVC{
         let naviInfo = self.container.makeSubView(width: nil, height: 44, type: FlexBoxView.self)
         
         let contentInfo = self.container.makeSubView(width: nil, height: nil, type: FlexBoxView.self)
-        contentInfo.host?.backgroundColor = UIColor.white
+        contentInfo.host?.backgroundColor = UIColor.gray
         contentInfo.grow = 1;
         contentInfo.wrap = true
         contentInfo.justifyContent = .evenly
