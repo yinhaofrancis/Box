@@ -31,14 +31,6 @@ public class FlexBoxView: UIView {
         super.init(frame: frame)
         layout.host = self
     }
-    
-    init(frame: CGRect,root:Bool) {
-        layout = FlexBox(width: frame.width < 0 ? nil : frame.width, height: frame.height < 0 ? nil : frame.height)
-        autoLayout = root;
-        super.init(frame: frame)
-        layout.host = self
-        autoLayout = false;
-    }
     required public init?(coder aDecoder: NSCoder) {
         layout = FlexBox(width:0 , height: 0)
         autoLayout = true

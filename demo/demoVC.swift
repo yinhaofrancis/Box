@@ -24,11 +24,13 @@ extension demoVC{
         self.container.layout.alignItem = .stretch
         let naviInfo = self.container.makeSubView(width: nil, height: 44, type: FlexBoxView.self)
         
-        let contentInfo = self.container.makeSubView(width: nil, height: 10, type: FlexBoxView.self)
-        contentInfo.host?.backgroundColor = UIColor.black
+        let contentInfo = self.container.makeSubView(width: nil, height: nil, type: FlexBoxView.self)
+        contentInfo.host?.backgroundColor = UIColor.white
         contentInfo.grow = 1;
-//        naviInfo.justifyContent = .between
-        naviInfo.host?.backgroundColor = UIColor.gray
+        contentInfo.wrap = true
+        contentInfo.justifyContent = .evenly
+        contentInfo.alignItem = .center
+        naviInfo.host?.backgroundColor = UIColor.white
         let btnInfo = naviInfo.host?.makeSubView(width: nil, height: 44, type: UIButton.self)
         btnInfo?.host?.setTitle("left", for: .normal)
         btnInfo?.needFitSize = true
@@ -44,6 +46,23 @@ extension demoVC{
         btn2Info?.relativePostion = .bottonRight(bottom: nil, right: 8)
         lblInfo?.host?.text = "title";
         btn2Info?.host?.addTarget(self, action: #selector(back), for: .touchUpInside)
+        
+        for i in (0..<6) {
+            
+            let a = contentInfo.host?.makeSubView(width: nil, height: nil, type: UIImageView.self)
+            a?.needFitSize = true
+            if i % 2 == 0{
+                a?.host?.image = #imageLiteral(resourceName: "f")
+            }else{
+                a?.host?.image = #imageLiteral(resourceName: "k")
+            }
+            
+            
+            a?.host?.backgroundColor = UIColor.white
+        }
+//
+        
+        
     }
     @objc func back(){
         self.dismiss(animated: true, completion: nil)
