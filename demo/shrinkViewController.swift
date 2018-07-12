@@ -17,11 +17,9 @@ class shrinkViewController: UIViewController {
     let al:[Align] = [.start,.center,.end,.stretch]
     override func viewDidLoad() {
         super.viewDidLoad()
-        change()
     }
     @IBAction func change() {
         self.makeView(v: base, just: ju[self.just.selectedSegmentIndex], alignItem: .center, alignContent: .start, wrap:false, count: 3)
-        self.base.layout.layout()
     }
     
     func makeView(v:FlexBoxView,just:Justify,alignItem:Align,alignContent:Justify,wrap:Bool,count:Int){

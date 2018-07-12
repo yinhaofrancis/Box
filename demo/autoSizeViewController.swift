@@ -45,7 +45,6 @@ class autoSizeViewController: UIViewController {
             flex.layout.alignItem = .center
             a.needFitSize = false
         }
-        flex.layout.layout()
     }
     
 
