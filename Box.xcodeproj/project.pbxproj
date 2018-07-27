@@ -23,8 +23,6 @@
 		A9BD529F20F238D000D85EDD /* shrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD529E20F238D000D85EDD /* shrinkViewController.swift */; };
 		A9BD52A120F240B900D85EDD /* autoSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD52A020F240B900D85EDD /* autoSizeViewController.swift */; };
 		A9BD52A320F4F57400D85EDD /* demoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD52A220F4F57400D85EDD /* demoVC.swift */; };
-		B98721BE2109A1C200678BBD /* RenderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98721BD2109A1C200678BBD /* RenderService.swift */; };
-		B98721C72109A5B400678BBD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98721C62109A5B400678BBD /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +68,6 @@
 		A9BD529E20F238D000D85EDD /* shrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shrinkViewController.swift; sourceTree = "<group>"; };
 		A9BD52A020F240B900D85EDD /* autoSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = autoSizeViewController.swift; sourceTree = "<group>"; };
 		A9BD52A220F4F57400D85EDD /* demoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoVC.swift; sourceTree = "<group>"; };
-		B98721BD2109A1C200678BBD /* RenderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderService.swift; sourceTree = "<group>"; };
-		B98721C12109A27A00678BBD /* Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
-		B98721C62109A5B400678BBD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +110,6 @@
 		A9B1C77320ED1BE500A11593 /* Box */ = {
 			isa = PBXGroup;
 			children = (
-				B98721BC2109A19E00678BBD /* render */,
 				B98721BB2109A16900678BBD /* layout */,
 				A9B1C77420ED1BE500A11593 /* Box.h */,
 				A9B1C77520ED1BE500A11593 /* Info.plist */,
@@ -149,16 +143,6 @@
 				A93FC32220EE7E8900C12F4B /* Type.swift */,
 			);
 			path = layout;
-			sourceTree = "<group>";
-		};
-		B98721BC2109A19E00678BBD /* render */ = {
-			isa = PBXGroup;
-			children = (
-				B98721C12109A27A00678BBD /* Display.swift */,
-				B98721BD2109A1C200678BBD /* RenderService.swift */,
-				B98721C62109A5B400678BBD /* Model.swift */,
-			);
-			path = render;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,11 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B98721C72109A5B400678BBD /* Model.swift in Sources */,
 				A9B1C79820ED1C8900A11593 /* FlexBox.swift in Sources */,
 				A93FC32320EE7E8900C12F4B /* Type.swift in Sources */,
 				A93FC32520F06C0600C12F4B /* FlexBoxView.swift in Sources */,
-				B98721BE2109A1C200678BBD /* RenderService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
