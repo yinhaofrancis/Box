@@ -28,7 +28,6 @@ class ViewController: UIViewController {
     }
     @IBAction func change() {
         self.makeView(v: base, just: ju[self.just.selectedSegmentIndex], alignItem: al[self.alignItem.selectedSegmentIndex], alignContent: ju[self.alignC.selectedSegmentIndex], wrap: self.wrap.isOn, count: Int(countS.value), width: ix.value < 30 ? nil :CGFloat(ix.value), height: iy.value < 30 ? nil :CGFloat(iy.value))
-        self.base.layout.layout()
     }
     
     func makeView(v:FlexBoxView,just:Justify,alignItem:Align,alignContent:Justify,wrap:Bool,count:Int,width:CGFloat?,height:CGFloat?){

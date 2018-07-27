@@ -189,9 +189,6 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
             }
         }
     }
-    
-    
-    // for block
 }
 class FlexLine: FlexSubBox{
     var relativePostion: Relative = .none
@@ -216,17 +213,9 @@ class FlexLine: FlexSubBox{
     
     var resultH: CGFloat
     
-    var width: CGFloat?{
-        didSet{
-            print("ok")
-        }
-    }
+    var width: CGFloat?
     
-    var height: CGFloat?{
-        didSet{
-            print("ok")
-        }
-    }
+    var height: CGFloat?
     
     var grow: Int = 1
     

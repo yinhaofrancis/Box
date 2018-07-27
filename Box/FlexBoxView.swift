@@ -22,7 +22,6 @@ extension UIView{
 
 @IBDesignable
 public class FlexBoxView: UIView {
-    
     public var autoLayout:Bool
     public var layout:FlexBox<FlexBoxView>
     public override init(frame: CGRect) {
@@ -36,14 +35,12 @@ public class FlexBoxView: UIView {
         autoLayout = true
         super.init(coder: aDecoder)
         layout.host = self
-        
     }
     public override func layoutSubviews() {
         if self.autoLayout{
             self.layout.width = self.frame.width
             self.layout.height = self.frame.height
             self.layout.layout()
-            
         }
     }
     public func makeSubView<T:UIView>(width:CGFloat?,height:CGFloat?,type:T.Type)->FlexBox<T>{

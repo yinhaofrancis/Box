@@ -22,11 +22,9 @@ class detailViewController: UIViewController {
     let al:[Align] = [.start,.center,.end,.stretch]
     override func viewDidLoad() {
         super.viewDidLoad()
-        change()
     }
     @IBAction func change() {
         self.makeView(v: base, just: ju[self.just.selectedSegmentIndex], alignItem: al[self.alignItem.selectedSegmentIndex], alignContent: ju[self.alignC.selectedSegmentIndex], wrap: self.wrap.isOn, count: Int(countS.value))
-        self.base.layout.layout()
     }
     
     func makeView(v:FlexBoxView,just:Justify,alignItem:Align,alignContent:Justify,wrap:Bool,count:Int){
