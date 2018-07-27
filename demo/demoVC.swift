@@ -8,6 +8,7 @@
 
 import UIKit
 import Box
+import simd
 class demoVC: UIViewController {
 
     @IBOutlet weak var container: FlexBoxView!
@@ -66,5 +67,6 @@ extension demoVC{
     }
     @objc func back(){
         self.dismiss(animated: true, completion: nil)
+        print(RectModel.sizeToFill(vertexWHRatio: 1, textureWHRatio: 1))
     }
 }
