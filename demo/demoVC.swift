@@ -66,7 +66,6 @@ extension demoVC{
     }
     @objc func back(){
         self.dismiss(animated: true, completion: nil)
-        print(RectModel.sizeToFill(vertexWHRatio: 1, textureWHRatio: 1))
     }
     
     @objc func change(){
