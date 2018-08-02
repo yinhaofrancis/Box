@@ -16,9 +16,12 @@ class drawViewController: UIViewController {
         let r = Rectangle(size: CGSize(width: 30, height: 30), radius: 8)
         r.texture = Texture(color: .red)
         let b = Rectangle(size: CGSize(width: 30, height: 30), radius: 8)
-        b.texture = Texture(string: NSAttributedString(string: "大声点啊活动空间就啊好风景啊的风景啊好地方啦的回复速度发货 就的回复啊啥的回复了三顿饭都是 灵魂撒地方", attributes: [
+        let a = NSMutableParagraphStyle()
+        a.alignment = .center
+        b.texture = Texture(string: NSAttributedString(string: "大声点啊活", attributes: [
             NSAttributedStringKey.font:UIFont.systemFont(ofSize: 10),
-            NSAttributedStringKey.foregroundColor:UIColor.white
+            NSAttributedStringKey.foregroundColor:UIColor.white,
+            NSAttributedStringKey.paragraphStyle:a
             ]))
         b.flex.grow = 1
         let c = Rectangle(size: CGSize(width: 30, height: 30), radius: 8)
@@ -45,6 +48,34 @@ class drawViewController: UIViewController {
     
     @IBOutlet weak var imgView:UIImageView!
 
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        canvas.context.clear(CGRect(x: 0, y: 0, width: 300, height: 300))
+        let a = NSMutableParagraphStyle()
+        a.alignment = .right
+        a.lineSpacing = 50
+        let trun = CTLineCreateWithAttributedString(NSAttributedString(string: "😄",attributes: [
+            NSAttributedStringKey.font:UIFont.systemFont(ofSize: 25),
+            NSAttributedStringKey.foregroundColor:UIColor.black]))
+        
+        let att = NSAttributedString(string: "A high speed phototypesetter in which a font is selectively illuminated by motor-driven scanning mirrors and scanning motion is cancelled in the reflected", attributes: [
+            NSAttributedStringKey.font:UIFont.systemFont(ofSize: 25),
+            NSAttributedStringKey.foregroundColor:UIColor.black,
+//            NSAttributedStringKey.paragraphStyle:a
+            ])
+        
+        let set = CTTypesetterCreateWithAttributedString(att as CFAttributedString)
+        let indx = CTTypesetterSuggestLineBreak(set, 0, 300)
+        let line = CTTypesetterCreateLine(set, CFRangeMake(0, indx));
+        var asc:CGFloat = 0,led:CGFloat = 0,des:CGFloat = 0
+        
+        CTLineGetTypographicBounds(line, &asc, &des, &led)
+        let rect = CTLineGetImageBounds(line, canvas.context)
+        let tline = CTLineCreateTruncatedLine(line, 300, .middle, trun)
+        canvas.context.textPosition = CGPoint(x: led, y: des)
+        CTLineDraw(tline!, canvas.context)
+       
+        imgView.image = UIImage(cgImage: canvas.context.makeImage()!)
+    }
 
 
 }
