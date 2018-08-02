@@ -56,7 +56,7 @@ public struct Image:Textureable{
     ///   - contain: 整个区域大小
     ///   - imageSize: 图片尺寸
     /// - Returns: 区域
-    private func drawSizeToFillRect(contain:CGRect,imageSize:CGSize)->CGRect{
+    private func drawSizeToFitRect(contain:CGRect,imageSize:CGSize)->CGRect{
         let rw = contain.width / imageSize.width
         let rh = contain.height / imageSize.height
         if rw > rh{
@@ -68,7 +68,7 @@ public struct Image:Textureable{
                 return changeRect(contain: contain, imageSize: imageSize, ratio: rw)
             }
         }else{
-            if(rh > 1){
+            if(rh < 1){
                 //width
                 return changeRect(contain: contain, imageSize: imageSize, ratio: rw)
             }else{
@@ -84,7 +84,7 @@ public struct Image:Textureable{
     ///   - contain: 整个区域大小
     ///   - imageSize: 图片尺寸
     /// - Returns: 区域
-    private func drawSizeToFitRect(contain:CGRect,imageSize:CGSize)->CGRect{
+    private func drawSizeToFillRect(contain:CGRect,imageSize:CGSize)->CGRect{
         let rw = contain.width / imageSize.width
         let rh = contain.height / imageSize.height
         if rw > rh{
@@ -96,7 +96,7 @@ public struct Image:Textureable{
                 return changeRect(contain: contain, imageSize: imageSize, ratio: rh)
             }
         }else{
-            if(rh > 1){
+            if(rh < 1){
                 
                 return changeRect(contain: contain, imageSize: imageSize, ratio: rh)
             }else{
