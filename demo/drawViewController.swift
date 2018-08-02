@@ -25,7 +25,7 @@ class drawViewController: UIViewController {
         c.texture = Texture(color: .green)
         
         let back = Rectangle(size: CGSize(width: 300, height: 300))
-        back.texture = Texture(image: #imageLiteral(resourceName: "f").cgImage!, mode: .scaleToFit)
+        back.texture = Texture(image: #imageLiteral(resourceName: "f").cgImage!, mode: .scaleToFill)
         back.flex.justifyContent = .start
         back.flex.alignItem = .end
         back.addRect(view: r)
