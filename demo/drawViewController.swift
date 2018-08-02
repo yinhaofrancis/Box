@@ -17,12 +17,14 @@ class drawViewController: UIViewController {
         r.texture = Texture(color: .red)
         let b = Rectangle(size: CGSize(width: 30, height: 30), radius: 8)
         b.texture = Texture(color: .blue)
+        b.flex.grow = 1
         let c = Rectangle(size: CGSize(width: 30, height: 30), radius: 8)
         c.texture = Texture(color: .green)
         
         let back = Rectangle(size: CGSize(width: 300, height: 300))
         back.texture = Texture(image: #imageLiteral(resourceName: "f").cgImage!, mode: .scaleToFill)
-        back.flex.justifyContent = .evenly
+        back.flex.justifyContent = .start
+        back.flex.alignItem = .end
         back.addRect(view: r)
         back.addRect(view: b)
         back.addRect(view: c)
