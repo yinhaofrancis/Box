@@ -7,8 +7,19 @@
 //
 
 import UIKit
-extension UIView{
-    func applyResult(rect:CGRect){
+
+public protocol Hostable{
+    func applyResult(rect:CGRect)
+    func calcSize(size:CGSize)->CGSize
+}
+
+
+extension UIView:Hostable {
+    public func calcSize(size: CGSize) -> CGSize {
+        return self.sizeThatFits(size)
+    }
+    
+    public func applyResult(rect:CGRect){
         if let s = self as? FlexBoxView{
             if !s.autoLayout{
                 self.frame = rect
@@ -21,7 +32,7 @@ extension UIView{
 }
 
 @IBDesignable
-public class FlexBoxView: UIView {
+public class FlexBoxView: UIView{
     public var autoLayout:Bool
     public var layout:FlexBox<FlexBoxView>
     public override init(frame: CGRect) {

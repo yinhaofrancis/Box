@@ -42,7 +42,7 @@ public protocol FlexBoxItem{
     var alignContent:Justify {get}
 }
 
-public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
+public class FlexBox<T:Hostable>: Box,FlexLineItem,FlexBoxItem,Container {
     public var relativePostion: Relative = .none
     
     public func storeRect(result: CGRect) {
@@ -180,7 +180,7 @@ public class FlexBox<T:UIView>: Box,FlexLineItem,FlexBoxItem,Container {
     public func fixSize() {
         if let h = self.host,needFitSize{
             let size = CGSize(width: self.width ?? .infinity, height: self.height ?? .infinity)
-            let fitsize = h.sizeThatFits(size)
+            let fitsize = h.calcSize(size: size)
             if self.width == nil{
                 self.width = fitsize.width
             }

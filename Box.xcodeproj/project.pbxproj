@@ -23,6 +23,22 @@
 		A9BD529F20F238D000D85EDD /* shrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD529E20F238D000D85EDD /* shrinkViewController.swift */; };
 		A9BD52A120F240B900D85EDD /* autoSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD52A020F240B900D85EDD /* autoSizeViewController.swift */; };
 		A9BD52A320F4F57400D85EDD /* demoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD52A220F4F57400D85EDD /* demoVC.swift */; };
+		B9CCB852211297D400365F16 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB83F211297D400365F16 /* Cache.swift */; };
+		B9CCB853211297D400365F16 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB840211297D400365F16 /* Canvas.swift */; };
+		B9CCB854211297D400365F16 /* PlaygroundSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB842211297D400365F16 /* PlaygroundSupport.swift */; };
+		B9CCB855211297D400365F16 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB844211297D400365F16 /* Bezier.swift */; };
+		B9CCB856211297D400365F16 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB845211297D400365F16 /* Circle.swift */; };
+		B9CCB857211297D400365F16 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB846211297D400365F16 /* Rectangle.swift */; };
+		B9CCB858211297D400365F16 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB847211297D400365F16 /* Shape.swift */; };
+		B9CCB859211297D400365F16 /* APNG.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB849211297D400365F16 /* APNG.swift */; };
+		B9CCB85A211297D400365F16 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84B211297D400365F16 /* Gradient.swift */; };
+		B9CCB85B211297D400365F16 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84C211297D400365F16 /* Image.swift */; };
+		B9CCB85C211297D400365F16 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84D211297D400365F16 /* Pattern.swift */; };
+		B9CCB85D211297D400365F16 /* Shading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84E211297D400365F16 /* Shading.swift */; };
+		B9CCB85E211297D400365F16 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84F211297D400365F16 /* Shadow.swift */; };
+		B9CCB85F211297D400365F16 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB850211297D400365F16 /* Text.swift */; };
+		B9CCB860211297D400365F16 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB851211297D400365F16 /* Texture.swift */; };
+		B9CCB86221129E4400365F16 /* drawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB86121129E4400365F16 /* drawViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +84,22 @@
 		A9BD529E20F238D000D85EDD /* shrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shrinkViewController.swift; sourceTree = "<group>"; };
 		A9BD52A020F240B900D85EDD /* autoSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = autoSizeViewController.swift; sourceTree = "<group>"; };
 		A9BD52A220F4F57400D85EDD /* demoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoVC.swift; sourceTree = "<group>"; };
+		B9CCB83F211297D400365F16 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		B9CCB840211297D400365F16 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		B9CCB842211297D400365F16 /* PlaygroundSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundSupport.swift; sourceTree = "<group>"; };
+		B9CCB844211297D400365F16 /* Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bezier.swift; sourceTree = "<group>"; };
+		B9CCB845211297D400365F16 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		B9CCB846211297D400365F16 /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		B9CCB847211297D400365F16 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		B9CCB849211297D400365F16 /* APNG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APNG.swift; sourceTree = "<group>"; };
+		B9CCB84B211297D400365F16 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		B9CCB84C211297D400365F16 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		B9CCB84D211297D400365F16 /* Pattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
+		B9CCB84E211297D400365F16 /* Shading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shading.swift; sourceTree = "<group>"; };
+		B9CCB84F211297D400365F16 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		B9CCB850211297D400365F16 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		B9CCB851211297D400365F16 /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
+		B9CCB86121129E4400365F16 /* drawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +142,7 @@
 		A9B1C77320ED1BE500A11593 /* Box */ = {
 			isa = PBXGroup;
 			children = (
+				B9CCB83D211297BC00365F16 /* draw */,
 				B98721BB2109A16900678BBD /* layout */,
 				A9B1C77420ED1BE500A11593 /* Box.h */,
 				A9B1C77520ED1BE500A11593 /* Info.plist */,
@@ -124,6 +157,7 @@
 				A9B1C78220ED1BF400A11593 /* AppDelegate.swift */,
 				A9B1C78420ED1BF400A11593 /* ViewController.swift */,
 				A9B1C78620ED1BF400A11593 /* Main.storyboard */,
+				B9CCB86121129E4400365F16 /* drawViewController.swift */,
 				A9BD529E20F238D000D85EDD /* shrinkViewController.swift */,
 				A9B1C78920ED1BF600A11593 /* Assets.xcassets */,
 				A9B1C78B20ED1BF600A11593 /* LaunchScreen.storyboard */,
@@ -143,6 +177,68 @@
 				A93FC32220EE7E8900C12F4B /* Type.swift */,
 			);
 			path = layout;
+			sourceTree = "<group>";
+		};
+		B9CCB83D211297BC00365F16 /* draw */ = {
+			isa = PBXGroup;
+			children = (
+				B9CCB848211297D400365F16 /* Animated */,
+				B9CCB83E211297D400365F16 /* Canvas */,
+				B9CCB841211297D400365F16 /* playground */,
+				B9CCB843211297D400365F16 /* shape */,
+				B9CCB84A211297D400365F16 /* texture */,
+			);
+			path = draw;
+			sourceTree = "<group>";
+		};
+		B9CCB83E211297D400365F16 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				B9CCB83F211297D400365F16 /* Cache.swift */,
+				B9CCB840211297D400365F16 /* Canvas.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		B9CCB841211297D400365F16 /* playground */ = {
+			isa = PBXGroup;
+			children = (
+				B9CCB842211297D400365F16 /* PlaygroundSupport.swift */,
+			);
+			path = playground;
+			sourceTree = "<group>";
+		};
+		B9CCB843211297D400365F16 /* shape */ = {
+			isa = PBXGroup;
+			children = (
+				B9CCB844211297D400365F16 /* Bezier.swift */,
+				B9CCB845211297D400365F16 /* Circle.swift */,
+				B9CCB846211297D400365F16 /* Rectangle.swift */,
+				B9CCB847211297D400365F16 /* Shape.swift */,
+			);
+			path = shape;
+			sourceTree = "<group>";
+		};
+		B9CCB848211297D400365F16 /* Animated */ = {
+			isa = PBXGroup;
+			children = (
+				B9CCB849211297D400365F16 /* APNG.swift */,
+			);
+			path = Animated;
+			sourceTree = "<group>";
+		};
+		B9CCB84A211297D400365F16 /* texture */ = {
+			isa = PBXGroup;
+			children = (
+				B9CCB84B211297D400365F16 /* Gradient.swift */,
+				B9CCB84C211297D400365F16 /* Image.swift */,
+				B9CCB84D211297D400365F16 /* Pattern.swift */,
+				B9CCB84E211297D400365F16 /* Shading.swift */,
+				B9CCB84F211297D400365F16 /* Shadow.swift */,
+				B9CCB850211297D400365F16 /* Text.swift */,
+				B9CCB851211297D400365F16 /* Texture.swift */,
+			);
+			path = texture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +355,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CCB854211297D400365F16 /* PlaygroundSupport.swift in Sources */,
+				B9CCB856211297D400365F16 /* Circle.swift in Sources */,
 				A9B1C79820ED1C8900A11593 /* FlexBox.swift in Sources */,
+				B9CCB859211297D400365F16 /* APNG.swift in Sources */,
+				B9CCB857211297D400365F16 /* Rectangle.swift in Sources */,
 				A93FC32320EE7E8900C12F4B /* Type.swift in Sources */,
+				B9CCB85B211297D400365F16 /* Image.swift in Sources */,
+				B9CCB860211297D400365F16 /* Texture.swift in Sources */,
+				B9CCB858211297D400365F16 /* Shape.swift in Sources */,
+				B9CCB852211297D400365F16 /* Cache.swift in Sources */,
+				B9CCB855211297D400365F16 /* Bezier.swift in Sources */,
+				B9CCB85D211297D400365F16 /* Shading.swift in Sources */,
+				B9CCB85F211297D400365F16 /* Text.swift in Sources */,
+				B9CCB853211297D400365F16 /* Canvas.swift in Sources */,
 				A93FC32520F06C0600C12F4B /* FlexBoxView.swift in Sources */,
+				B9CCB85E211297D400365F16 /* Shadow.swift in Sources */,
+				B9CCB85C211297D400365F16 /* Pattern.swift in Sources */,
+				B9CCB85A211297D400365F16 /* Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CCB86221129E4400365F16 /* drawViewController.swift in Sources */,
 				A9B1C78520ED1BF400A11593 /* ViewController.swift in Sources */,
 				A9BD529D20F2328B00D85EDD /* growViewController.swift in Sources */,
 				A9BD52A120F240B900D85EDD /* autoSizeViewController.swift in Sources */,

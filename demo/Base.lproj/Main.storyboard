@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qhi-tT-21M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w6u-1E-fXU">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gO4-df-9hH" customClass="FlexBoxView" customModule="Box">
-                                <rect key="frame" x="0.0" y="403" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="354" width="375" height="375"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gO4-df-9hH" secondAttribute="height" id="EGc-bx-euJ"/>
@@ -134,7 +134,7 @@
                                 </connections>
                             </slider>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="geC-u3-KPX">
-                                <rect key="frame" x="113" y="367" width="149" height="29"/>
+                                <rect key="frame" x="113" y="318" width="149" height="29"/>
                                 <segments>
                                     <segment title="horizental"/>
                                     <segment title="vertical"/>
@@ -215,12 +215,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975.20000000000005" y="32.512315270935964"/>
+            <point key="canvasLocation" x="1917.5999999999999" y="32.512315270935964"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--draw-->
+        <scene sceneID="mfU-ej-Adf">
+            <objects>
+                <viewController id="if2-cg-U8A" customClass="drawViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xRd-xU-QUP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="k" translatesAutoresizingMaskIntoConstraints="NO" id="qRY-iA-4MQ">
+                                <rect key="frame" x="0.0" y="218.66666666666663" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qRY-iA-4MQ" secondAttribute="height" id="sgU-nn-ixI"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qRY-iA-4MQ" firstAttribute="leading" secondItem="qmd-YF-3RG" secondAttribute="leading" id="gzg-ac-gfd"/>
+                            <constraint firstItem="qRY-iA-4MQ" firstAttribute="centerY" secondItem="xRd-xU-QUP" secondAttribute="centerY" id="v4W-8K-05C"/>
+                            <constraint firstItem="qmd-YF-3RG" firstAttribute="trailing" secondItem="qRY-iA-4MQ" secondAttribute="trailing" id="vyg-cy-h8D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qmd-YF-3RG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="draw" id="Uxk-zT-ISj"/>
+                    <connections>
+                        <outlet property="imgView" destination="qRY-iA-4MQ" id="vGc-Kz-DDW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DsP-h9-gWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="-692"/>
+        </scene>
+        <!--View-->
         <scene sceneID="JY7-DU-3pR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qhi-tT-21M" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="View" id="O98-oU-h1U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V09-Bs-G1V">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -233,7 +266,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRa-G7-axI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="32.512315270935964"/>
+            <point key="canvasLocation" x="975.20000000000005" y="32.512315270935964"/>
         </scene>
         <!--DemoVC-->
         <scene sceneID="nvB-tL-d4h">
@@ -263,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zog-Pj-qIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973.60000000000002" y="-609.60591133004925"/>
+            <point key="canvasLocation" x="1916" y="-609.60591133004925"/>
         </scene>
         <!--细节-->
         <scene sceneID="KPe-Cj-t5B">
@@ -274,7 +307,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-6F-VA9" customClass="FlexBoxView" customModule="Box">
-                                <rect key="frame" x="0.0" y="403" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="354" width="375" height="375"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pQ8-6F-VA9" secondAttribute="height" id="X4R-xF-pnt"/>
@@ -415,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjB-xl-8rz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1682" y="33"/>
+            <point key="canvasLocation" x="2623.1999999999998" y="32.512315270935964"/>
         </scene>
         <!--拉伸-->
         <scene sceneID="4VA-rG-ysB">
@@ -426,7 +459,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFt-WP-7zD" customClass="FlexBoxView" customModule="Box">
-                                <rect key="frame" x="0.0" y="403" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="354" width="375" height="375"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PFt-WP-7zD" secondAttribute="height" id="IgK-XI-5QU"/>
@@ -537,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPk-rw-cYe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2372" y="33"/>
+            <point key="canvasLocation" x="3314.4000000000001" y="32.512315270935964"/>
         </scene>
         <!--压缩-->
         <scene sceneID="88X-Jb-y6B">
@@ -548,7 +581,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpf-dp-S0u" customClass="FlexBoxView" customModule="Box">
-                                <rect key="frame" x="0.0" y="403" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="354" width="375" height="375"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mpf-dp-S0u" secondAttribute="height" id="4qM-7O-c4P"/>
@@ -659,7 +692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njF-Og-8st" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092" y="33"/>
+            <point key="canvasLocation" x="4034.4000000000001" y="32.512315270935964"/>
         </scene>
         <!--Auto Size View Controller-->
         <scene sceneID="eKH-jo-YOk">
@@ -683,7 +716,7 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5q-Uf-7wb" customClass="FlexBoxView" customModule="Box">
-                                <rect key="frame" x="8" y="144" width="359" height="634"/>
+                                <rect key="frame" x="8" y="144" width="359" height="585"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -705,7 +738,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9w-4L-b6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3796" y="25.862068965517242"/>
+            <point key="canvasLocation" x="4738.3999999999996" y="25.862068965517242"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="7Kr-YP-OKl">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="w6u-1E-fXU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Ep-yV-p0B">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Qhi-tT-21M" kind="relationship" relationship="viewControllers" id="dfx-Lt-lO7"/>
+                        <segue destination="if2-cg-U8A" kind="relationship" relationship="viewControllers" id="Gvd-Ix-ntk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rS6-NK-QK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="32.512315270935964"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="k" width="93" height="94"/>
+    </resources>
 </document>

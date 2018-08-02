@@ -93,6 +93,111 @@ extension LayoutBox{
     }
 }
 
+public struct DrawError:Error {
+    public var code:Int
+    public var desc:String
+    public var line:Int
+    public var filename:String
+    public typealias ErrorClosure = (Int,String)->DrawError
+    public static var createContextFail:ErrorClosure{
+        return makeErrorClosure(code: 1, desc: "创建Context失败")
+    }
+    public static var createLayerFail:ErrorClosure{
+        return makeErrorClosure(code: 2, desc: "创建Layer失败")
+    }
+    public static var createCGFunctionFail:ErrorClosure{
+        return makeErrorClosure(code: 3, desc: "创建CGFunction失败")
+    }
+    public static var createCGShadingFail:ErrorClosure{
+        return makeErrorClosure(code: 4, desc: "创建CGShading失败")
+    }
+    public static var createCGGradientFail:ErrorClosure{
+        return makeErrorClosure(code: 5, desc: "创建CGGradient失败")
+    }
+    public static var createCGPatternFail:ErrorClosure{
+        return makeErrorClosure(code: 5, desc: "创建CGPattern失败")
+    }
+    public static var addBezeirPointToMuchFail:ErrorClosure{
+        return makeErrorClosure(code: 6, desc: "贝塞尔曲线控制点过多")
+    }
+    public static func makeErrorClosure(code:Int,desc:String)->ErrorClosure{
+        return {(line,file) in
+            return DrawError(code: code, desc: desc, line: line, filename: file)
+        }
+    }
+    
+    public var localizedDescription: String{
+        return "\(Date()):[Error] code\(self.code) \(self.desc) in \(self.filename)line:\(self.line)"
+    }
+}
+extension CGColor{
+    public static var red:CGColor{
+        return CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1,0,0,1])!
+    }
+    public static var blue:CGColor{
+        return CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0,0,1,1])!
+    }
+    public static var green:CGColor{
+        return CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0,1,0,1])!
+    }
+    public static var black:CGColor{
+        return CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0,0,0,1])!
+    }
+    public static var white:CGColor{
+        return CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1,1,1,1])!
+    }
+    public static var clear:CGColor{
+        return CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0,0,0,0])!
+    }
+    public static func rgb(r:CGFloat,g:CGFloat,b:CGFloat,a:CGFloat = 1)->CGColor {
+        return self.init(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [r,g,b,a])!
+    }
+    public static var rand:CGColor{
+        return CGColor.rgb(r: CGFloat(arc4random()) / CGFloat(RAND_MAX), g: CGFloat(arc4random()) / CGFloat(RAND_MAX), b: CGFloat(arc4random()) / CGFloat(RAND_MAX))
+    }
+    static public func initWithString(storeText: String)->CGColor {
+        let start = storeText.index(after: storeText.startIndex)
+        let end = storeText.endIndex
+        let s = Array(storeText.lowercased()[start..<end])
+        var rea = Array<String>()
+        for i in (0..<s.count){
+            if i % 2 == 1{
+                rea.append("\(s[i - 1])\(s[i])")
+            }
+        }
+        let arry = rea.map {strtoul(String($0), nil, 16)}.map{CGFloat($0) / 255.0}
+        
+        if let color = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: arry){
+            return color
+        }else{
+            return CGColor.black
+        }
+    }
+    public var colorText: String {
+        get{
+            let r = Int((self.components?[0] ?? 0) * 255)
+            let g = Int((self.components?[1] ?? 0) * 255)
+            let b = Int((self.components?[2] ?? 0) * 255)
+            let a = Int(self.alpha * 255)
+            return String(format: "#%x%x%x%x", r,g,b,a)
+        }
+    }
+}
+extension CGSize{
+    static public func * (size:CGSize,v:CGFloat)->CGSize{
+        return CGSize(width: size.width * v, height: size.height * v)
+    }
+    static public func + (size:CGSize,v:CGFloat)->CGSize{
+        return CGSize(width: size.width + v, height: size.height + v)
+    }
+    static public func - (size:CGSize,v:CGFloat)->CGSize{
+        return size + (-v)
+    }
+    static public func / (size:CGSize,v:CGFloat)->CGSize{
+        return size * (1 / v)
+    }
+}
+
 public typealias FlexSubBox = FlexItem & LayoutBox & Rect
 
 public typealias Box = FlexSubBox
