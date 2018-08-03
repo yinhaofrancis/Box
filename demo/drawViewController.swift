@@ -13,18 +13,18 @@ class drawViewController: UIViewController {
     let canvas = try! Canvas(size:  CGSize(width: 300, height: 300), scale: 3, colorFormat: Canvas.ColorFomat.rgb8, clearColor: UIColor.red.cgColor);
     override func viewDidLoad() {
         super.viewDidLoad()
-        let r = Rectangle(size: CGSize(width: 30, height: 30), radius: 8)
+        let r = Rectangle(size: CGSize(width: 60, height: 40), radius: 8)
         r.texture = Texture(color: .red)
-        let b = Rectangle(size: CGSize(width: 30, height: 30), radius: 8)
+        let b = Rectangle(size: CGSize(width: 60, height: 40), radius: 8)
         let a = NSMutableParagraphStyle()
-        a.alignment = .left
+        a.alignment = .center
         b.texture = Texture(string: NSAttributedString(string: "kfkjhf", attributes: [
             NSAttributedStringKey.font:UIFont.systemFont(ofSize: 10),
             NSAttributedStringKey.foregroundColor:UIColor.white,
             NSAttributedStringKey.paragraphStyle:a
             ]))
         b.flex.grow = 1
-        let c = Rectangle(size: CGSize(width: 30, height: 30), radius: 8)
+        let c = Rectangle(size: CGSize(width: 60, height: 40), radius: 8)
         c.texture = Texture(color: .green)
         
         let back = Rectangle(size: CGSize(width: 300, height: 300))
