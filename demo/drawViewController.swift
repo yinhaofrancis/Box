@@ -17,8 +17,8 @@ class drawViewController: UIViewController {
         r.texture = Texture(color: .red)
         let b = Rectangle(size: CGSize(width: 30, height: 30), radius: 8)
         let a = NSMutableParagraphStyle()
-        a.alignment = .center
-        b.texture = Texture(string: NSAttributedString(string: "大声点啊活", attributes: [
+        a.alignment = .left
+        b.texture = Texture(string: NSAttributedString(string: "kfkjhf", attributes: [
             NSAttributedStringKey.font:UIFont.systemFont(ofSize: 10),
             NSAttributedStringKey.foregroundColor:UIColor.white,
             NSAttributedStringKey.paragraphStyle:a
@@ -51,7 +51,7 @@ class drawViewController: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         canvas.context.clear(CGRect(x: 0, y: 0, width: 300, height: 300))
         let a = NSMutableParagraphStyle()
-        a.alignment = .right
+        a.alignment = .left
         a.lineSpacing = 50
         let trun = CTLineCreateWithAttributedString(NSAttributedString(string: "😄",attributes: [
             NSAttributedStringKey.font:UIFont.systemFont(ofSize: 25),
@@ -60,7 +60,7 @@ class drawViewController: UIViewController {
         let att = NSAttributedString(string: "A high speed phototypesetter in which a font is selectively illuminated by motor-driven scanning mirrors and scanning motion is cancelled in the reflected", attributes: [
             NSAttributedStringKey.font:UIFont.systemFont(ofSize: 25),
             NSAttributedStringKey.foregroundColor:UIColor.black,
-//            NSAttributedStringKey.paragraphStyle:a
+            NSAttributedStringKey.paragraphStyle:a
             ])
         
         let set = CTTypesetterCreateWithAttributedString(att as CFAttributedString)
