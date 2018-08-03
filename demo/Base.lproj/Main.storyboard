@@ -226,16 +226,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="k" translatesAutoresizingMaskIntoConstraints="NO" id="qRY-iA-4MQ">
-                                <rect key="frame" x="0.0" y="218.66666666666663" width="375" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qRY-iA-4MQ" secondAttribute="height" id="sgU-nn-ixI"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qRY-iA-4MQ" firstAttribute="top" secondItem="qmd-YF-3RG" secondAttribute="top" id="Q1G-mc-syn"/>
                             <constraint firstItem="qRY-iA-4MQ" firstAttribute="leading" secondItem="qmd-YF-3RG" secondAttribute="leading" id="gzg-ac-gfd"/>
-                            <constraint firstItem="qRY-iA-4MQ" firstAttribute="centerY" secondItem="xRd-xU-QUP" secondAttribute="centerY" id="v4W-8K-05C"/>
+                            <constraint firstItem="qRY-iA-4MQ" firstAttribute="bottom" secondItem="qmd-YF-3RG" secondAttribute="bottom" id="naO-gI-xI7"/>
                             <constraint firstItem="qmd-YF-3RG" firstAttribute="trailing" secondItem="qRY-iA-4MQ" secondAttribute="trailing" id="vyg-cy-h8D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qmd-YF-3RG"/>
@@ -247,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsP-h9-gWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="-692"/>
+            <point key="canvasLocation" x="32.799999999999997" y="-692.36453201970448"/>
         </scene>
         <!--View-->
         <scene sceneID="JY7-DU-3pR">
@@ -746,6 +744,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="w6u-1E-fXU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Ep-yV-p0B">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
