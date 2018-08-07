@@ -20,15 +20,19 @@ class drawViewController: UIViewController {
         a.alignment = .center
         b.texture = Texture(string: NSAttributedString(string: "kfkjhf", attributes: [
             NSAttributedStringKey.font:UIFont.systemFont(ofSize: 16),
-            NSAttributedStringKey.foregroundColor:UIColor.white,
+            NSAttributedStringKey.foregroundColor:UIColor.black,
             NSAttributedStringKey.paragraphStyle:a
             ]))
         b.flex.grow = 1
         let c = Rectangle(size: CGSize(width: 60, height: 44), radius: 8)
         c.texture = Texture(color: .green)
         
+        let p = try! Pattern(draw: { (i, c) in
+            c.fillEllipse(in: CGRect(x: 6, y: 6, width: 8, height: 8))
+            c.strokeEllipse(in: CGRect(x: 2, y: 2, width: 16, height: 16))
+        }, rect: CGRect(x: 0, y: 0, width: 20, height: 20))
         let back = Rectangle(size: CGSize(width: 375, height: 598))
-        back.texture = Texture(image: #imageLiteral(resourceName: "f").cgImage!, mode: .scaleToFill)
+        back.texture = Texture(pattern: p)
         back.flex.justifyContent = .start
         back.flex.alignItem = .end
         back.addRect(view: r)

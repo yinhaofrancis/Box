@@ -45,6 +45,7 @@ public class Pattern:Textureable{
     public convenience init(draw:@escaping PatternConfig.Call,rect:CGRect,line:Int = #line,file:String = #file) throws{
         do{
             try self.init(config: PatternConfig(bounds: rect, xStep: rect.width, yStep: rect.height, draw: draw))
+            self.fillColorComponent = [0,0,0,1];
         }catch let error as DrawError{
             var err = error
             err.line = line
