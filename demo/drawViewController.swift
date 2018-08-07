@@ -25,7 +25,7 @@ class drawViewController: UIViewController {
             ]))
         b.flex.grow = 1
         let c = Rectangle(size: CGSize(width: 60, height: 44), radius: 8)
-        c.texture = Texture(color: .green)
+        c.texture = Texture(color: CGColor.initWithNum(num: 0xff00ffff))
         
         let p = try! Pattern(draw: { (i, c) in
             c.fillEllipse(in: CGRect(x: 6, y: 6, width: 80, height: 80))

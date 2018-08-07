@@ -173,6 +173,18 @@ extension CGColor{
             return CGColor.black
         }
     }
+    static public func initWithNum(num:UInt32)->CGColor{
+        let p = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
+        p.assign(repeating: num, count: 1)
+        let u = p.withMemoryRebound(to: UInt8.self, capacity: 4) { (i) -> UnsafeMutablePointer<UInt8> in
+            return i
+        }
+        
+        let buff = UnsafeMutableBufferPointer<UInt8>.init(start: u, count: 4)
+        let a = Array<UInt8>.init(buff).reversed().map({CGFloat($0) / CGFloat(255)})
+        
+        return CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: a)!
+    }
     public var colorText: String {
         get{
             let r = Int((self.components?[0] ?? 0) * 255)
