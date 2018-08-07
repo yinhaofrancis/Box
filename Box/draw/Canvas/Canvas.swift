@@ -162,7 +162,7 @@ public class Canvas:Context{
             }
         }
     }
-    public var image:CGImage?{
+    var image:CGImage?{
         Canvas.group.wait()
         return self.context.makeImage()
     }

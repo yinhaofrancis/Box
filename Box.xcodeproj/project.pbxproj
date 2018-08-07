@@ -39,6 +39,7 @@
 		B9CCB85F211297D400365F16 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB850211297D400365F16 /* Text.swift */; };
 		B9CCB860211297D400365F16 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB851211297D400365F16 /* Texture.swift */; };
 		B9CCB86221129E4400365F16 /* drawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB86121129E4400365F16 /* drawViewController.swift */; };
+		B9DC0F70211946F100741B2C /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DC0F6F211946F100741B2C /* libxml2.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		B9CCB850211297D400365F16 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		B9CCB851211297D400365F16 /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
 		B9CCB86121129E4400365F16 /* drawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawViewController.swift; sourceTree = "<group>"; };
+		B9DC0F6F211946F100741B2C /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9DC0F70211946F100741B2C /* libxml2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +130,7 @@
 				A9B1C77320ED1BE500A11593 /* Box */,
 				A9B1C78120ED1BF400A11593 /* demo */,
 				A9B1C77220ED1BE500A11593 /* Products */,
+				B9DC0F6E211946F100741B2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,6 +243,14 @@
 				B9CCB851211297D400365F16 /* Texture.swift */,
 			);
 			path = texture;
+			sourceTree = "<group>";
+		};
+		B9DC0F6E211946F100741B2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9DC0F6F211946F100741B2C /* libxml2.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,6 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = FrancisAlex.Box;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -591,6 +604,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = FrancisAlex.Box;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

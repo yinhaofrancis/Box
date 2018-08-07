@@ -18,6 +18,7 @@ public protocol Drawable:class {
 }
 
 public class Shape:Drawable{
+    
     public var selfTransform: CGAffineTransform{
         return CGAffineTransform(translationX:anchorPoint.x , y: anchorPoint.y).translatedBy(x: translate.x, y: translate.y).rotated(by: self.rotate).scaledBy(x: self.scale.x, y: self.scale.y).translatedBy(x: -self.anchorPoint.x, y: -self.anchorPoint.y)
     }
