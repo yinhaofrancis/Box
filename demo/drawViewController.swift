@@ -28,9 +28,9 @@ class drawViewController: UIViewController {
         c.texture = Texture(color: .green)
         
         let p = try! Pattern(draw: { (i, c) in
-            c.fillEllipse(in: CGRect(x: 6, y: 6, width: 8, height: 8))
-            c.strokeEllipse(in: CGRect(x: 2, y: 2, width: 16, height: 16))
-        }, rect: CGRect(x: 0, y: 0, width: 20, height: 20))
+            c.fillEllipse(in: CGRect(x: 6, y: 6, width: 80, height: 80))
+            c.strokeEllipse(in: CGRect(x: 2, y: 2, width: 160, height: 160))
+        }, rect: CGRect(x: 0, y: 0, width: 200, height: 200))
         let back = Rectangle(size: CGSize(width: 375, height: 598))
         back.texture = Texture(pattern: p)
         back.flex.justifyContent = .start
