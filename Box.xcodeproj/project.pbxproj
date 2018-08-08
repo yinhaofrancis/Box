@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		B9F89249211A846B0051CFD2 /* libBox */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B9F8924A211A846B0051CFD2 /* Build configuration list for PBXAggregateTarget "libBox" */;
+			buildPhases = (
+				B9F89251211A859E0051CFD2 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = libBox;
+			productName = libBox;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		A93FC32320EE7E8900C12F4B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32220EE7E8900C12F4B /* Type.swift */; };
 		A93FC32520F06C0600C12F4B /* FlexBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32420F06C0600C12F4B /* FlexBoxView.swift */; };
@@ -25,7 +39,6 @@
 		A9BD52A320F4F57400D85EDD /* demoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD52A220F4F57400D85EDD /* demoVC.swift */; };
 		B9CCB852211297D400365F16 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB83F211297D400365F16 /* Cache.swift */; };
 		B9CCB853211297D400365F16 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB840211297D400365F16 /* Canvas.swift */; };
-		B9CCB854211297D400365F16 /* PlaygroundSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB842211297D400365F16 /* PlaygroundSupport.swift */; };
 		B9CCB855211297D400365F16 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB844211297D400365F16 /* Bezier.swift */; };
 		B9CCB856211297D400365F16 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB845211297D400365F16 /* Circle.swift */; };
 		B9CCB857211297D400365F16 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB846211297D400365F16 /* Rectangle.swift */; };
@@ -44,7 +57,6 @@
 		B9F89172211A7B040051CFD2 /* APNG.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB849211297D400365F16 /* APNG.swift */; };
 		B9F89173211A7B040051CFD2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB83F211297D400365F16 /* Cache.swift */; };
 		B9F89174211A7B040051CFD2 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB840211297D400365F16 /* Canvas.swift */; };
-		B9F89175211A7B040051CFD2 /* PlaygroundSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB842211297D400365F16 /* PlaygroundSupport.swift */; };
 		B9F89176211A7B040051CFD2 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB844211297D400365F16 /* Bezier.swift */; };
 		B9F89177211A7B040051CFD2 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB845211297D400365F16 /* Circle.swift */; };
 		B9F89178211A7B040051CFD2 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB846211297D400365F16 /* Rectangle.swift */; };
@@ -58,6 +70,8 @@
 		B9F89180211A7B040051CFD2 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB851211297D400365F16 /* Texture.swift */; };
 		B9F89181211A7B040051CFD2 /* FlexBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1C79720ED1C8900A11593 /* FlexBox.swift */; };
 		B9F89182211A7B040051CFD2 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32220EE7E8900C12F4B /* Type.swift */; };
+		B9F89252211A94170051CFD2 /* PlaygroundSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB842211297D400365F16 /* PlaygroundSupport.swift */; };
+		B9F89253211A94180051CFD2 /* PlaygroundSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB842211297D400365F16 /* PlaygroundSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -389,6 +403,9 @@
 					B9F89169211A7AD60051CFD2 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					B9F89249211A846B0051CFD2 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = A9B1C76B20ED1BE500A11593 /* Build configuration list for PBXProject "Box" */;
@@ -407,6 +424,7 @@
 				A9B1C77020ED1BE500A11593 /* Box */,
 				A9B1C77F20ED1BF400A11593 /* demo */,
 				B9F89169211A7AD60051CFD2 /* MacBox */,
+				B9F89249211A846B0051CFD2 /* libBox */,
 			);
 		};
 /* End PBXProject section */
@@ -438,12 +456,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B9F89251211A859E0051CFD2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "WRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/Box.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/Box.framework\nINSTALL_DIR=${WRK_DIR}/Products/Box.framework\nrm -rf ${WRK_DIR}\nxcodebuild -configuration \"Release\" -target \"Box\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"Box\" -sdk iphonesimulator clean build\n\nmkdir ${WRK_DIR}/Products\ncp -R ${DEVICE_DIR} ${INSTALL_DIR}\ncp -R ${SIMULATOR_DIR}/Modules ${INSTALL_DIR}\nlipo -create \"${DEVICE_DIR}/Box\" \"${SIMULATOR_DIR}/Box\" -output \"${INSTALL_DIR}/Box\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A9B1C76C20ED1BE500A11593 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9CCB854211297D400365F16 /* PlaygroundSupport.swift in Sources */,
+				B9F89252211A94170051CFD2 /* PlaygroundSupport.swift in Sources */,
 				B9CCB856211297D400365F16 /* Circle.swift in Sources */,
 				A9B1C79820ED1C8900A11593 /* FlexBox.swift in Sources */,
 				B9CCB859211297D400365F16 /* APNG.swift in Sources */,
@@ -484,9 +518,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F89172211A7B040051CFD2 /* APNG.swift in Sources */,
+				B9F89253211A94180051CFD2 /* PlaygroundSupport.swift in Sources */,
 				B9F89173211A7B040051CFD2 /* Cache.swift in Sources */,
 				B9F89174211A7B040051CFD2 /* Canvas.swift in Sources */,
-				B9F89175211A7B040051CFD2 /* PlaygroundSupport.swift in Sources */,
 				B9F89176211A7B040051CFD2 /* Bezier.swift in Sources */,
 				B9F89177211A7B040051CFD2 /* Circle.swift in Sources */,
 				B9F89178211A7B040051CFD2 /* Rectangle.swift in Sources */,
@@ -806,6 +840,24 @@
 			};
 			name = Release;
 		};
+		B9F8924B211A846B0051CFD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2DLB5HANTP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B9F8924C211A846B0051CFD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2DLB5HANTP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -841,6 +893,15 @@
 			buildConfigurations = (
 				B9F8916F211A7AD60051CFD2 /* Debug */,
 				B9F89170211A7AD60051CFD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9F8924A211A846B0051CFD2 /* Build configuration list for PBXAggregateTarget "libBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9F8924B211A846B0051CFD2 /* Debug */,
+				B9F8924C211A846B0051CFD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
