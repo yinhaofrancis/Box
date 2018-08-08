@@ -11,7 +11,7 @@ import QuartzCore
 
 func drawTextureToImage(texture:Textureable)->CGImage?{
     let canvas = try! Canvas(size: CGSize(width: 30, height: 30))
-    let rect = Rectangle(size: .init(width: 30, height: 30))
+    let rect = Rectangle(rect: CGRect(x: 0, y: 0, width: 30, height: 30))
     rect.texture = Texture(content: [texture])
     return canvas.draw(drawable: rect)
 }
@@ -35,7 +35,7 @@ extension Shading:CustomPlaygroundDisplayConvertible{
 extension Texture:CustomPlaygroundDisplayConvertible{
     public var playgroundDescription: Any{
         let canvas = try! Canvas(size: CGSize(width: 30, height: 30))
-        let rect = Rectangle(size: .init(width: 30, height: 30))
+        let rect = Rectangle(rect: CGRect(x: 0, y: 0, width: 30, height: 30))
         rect.texture = self
         return canvas.draw(drawable: rect) ?? "nil"
     }

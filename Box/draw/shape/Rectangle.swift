@@ -17,12 +17,15 @@ public class Rectangle:Shape,Hostable{
     public func calcSize(size: CGSize) -> CGSize {
         return size;
     }
-    public required init(size:CGSize,radius:CGFloat = 0) {
+    public convenience init(size:CGSize,radius:CGFloat = 0) {
+        self.init(rect: CGRect(origin: .zero, size: size), radius: radius)
+    }
+    public required init(rect:CGRect,radius:CGFloat = 0) {
 //        self.rect = rect
-        self.flex = FlexBox(width: size.width, height: size.height)
+        self.flex = FlexBox(width: rect.width, height: rect.height)
         self.radius = radius
-        self.rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        super.init(path: CGPath(roundedRect: CGRect(x: 0, y: 0, width: size.width, height: size.height), cornerWidth: radius, cornerHeight: radius, transform: nil))
+        self.rect = rect
+        super.init(path: CGPath(roundedRect: CGRect(x: 0, y: 0, width: rect.width, height: rect.height), cornerWidth: radius, cornerHeight: radius, transform: nil))
         self.flex.host = self
     }
     override public var originPath: CGPath{
