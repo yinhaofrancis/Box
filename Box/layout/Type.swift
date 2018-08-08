@@ -7,7 +7,10 @@
 //
 
 import QuartzCore
-
+public protocol Hostable{
+    func applyResult(rect:CGRect)
+    func calcSize(size:CGSize)->CGSize
+}
 public protocol Rect{
     var width:CGFloat? {get set}
     var height:CGFloat? {get set}
@@ -17,7 +20,7 @@ public protocol Rect{
     func fixSize()
 }
 public protocol UIExtension:class{
-    associatedtype T:UIView
+    associatedtype T:Hostable
     var host:T? {get set}
 }
 

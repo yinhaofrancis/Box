@@ -40,6 +40,24 @@
 		B9CCB860211297D400365F16 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB851211297D400365F16 /* Texture.swift */; };
 		B9CCB86221129E4400365F16 /* drawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB86121129E4400365F16 /* drawViewController.swift */; };
 		B9DC0F70211946F100741B2C /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DC0F6F211946F100741B2C /* libxml2.tbd */; };
+		B9F8916E211A7AD60051CFD2 /* MacBox.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F8916C211A7AD60051CFD2 /* MacBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9F89172211A7B040051CFD2 /* APNG.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB849211297D400365F16 /* APNG.swift */; };
+		B9F89173211A7B040051CFD2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB83F211297D400365F16 /* Cache.swift */; };
+		B9F89174211A7B040051CFD2 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB840211297D400365F16 /* Canvas.swift */; };
+		B9F89175211A7B040051CFD2 /* PlaygroundSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB842211297D400365F16 /* PlaygroundSupport.swift */; };
+		B9F89176211A7B040051CFD2 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB844211297D400365F16 /* Bezier.swift */; };
+		B9F89177211A7B040051CFD2 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB845211297D400365F16 /* Circle.swift */; };
+		B9F89178211A7B040051CFD2 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB846211297D400365F16 /* Rectangle.swift */; };
+		B9F89179211A7B040051CFD2 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB847211297D400365F16 /* Shape.swift */; };
+		B9F8917A211A7B040051CFD2 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84B211297D400365F16 /* Gradient.swift */; };
+		B9F8917B211A7B040051CFD2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84C211297D400365F16 /* Image.swift */; };
+		B9F8917C211A7B040051CFD2 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84D211297D400365F16 /* Pattern.swift */; };
+		B9F8917D211A7B040051CFD2 /* Shading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84E211297D400365F16 /* Shading.swift */; };
+		B9F8917E211A7B040051CFD2 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB84F211297D400365F16 /* Shadow.swift */; };
+		B9F8917F211A7B040051CFD2 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB850211297D400365F16 /* Text.swift */; };
+		B9F89180211A7B040051CFD2 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CCB851211297D400365F16 /* Texture.swift */; };
+		B9F89181211A7B040051CFD2 /* FlexBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1C79720ED1C8900A11593 /* FlexBox.swift */; };
+		B9F89182211A7B040051CFD2 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC32220EE7E8900C12F4B /* Type.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +120,9 @@
 		B9CCB851211297D400365F16 /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
 		B9CCB86121129E4400365F16 /* drawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawViewController.swift; sourceTree = "<group>"; };
 		B9DC0F6F211946F100741B2C /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		B9F8916A211A7AD60051CFD2 /* MacBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MacBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9F8916C211A7AD60051CFD2 /* MacBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacBox.h; sourceTree = "<group>"; };
+		B9F8916D211A7AD60051CFD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +142,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B9F89166211A7AD60051CFD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -129,6 +157,7 @@
 			children = (
 				A9B1C77320ED1BE500A11593 /* Box */,
 				A9B1C78120ED1BF400A11593 /* demo */,
+				B9F8916B211A7AD60051CFD2 /* MacBox */,
 				A9B1C77220ED1BE500A11593 /* Products */,
 				B9DC0F6E211946F100741B2C /* Frameworks */,
 			);
@@ -139,6 +168,7 @@
 			children = (
 				A9B1C77120ED1BE500A11593 /* Box.framework */,
 				A9B1C78020ED1BF400A11593 /* demo.app */,
+				B9F8916A211A7AD60051CFD2 /* MacBox.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +283,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B9F8916B211A7AD60051CFD2 /* MacBox */ = {
+			isa = PBXGroup;
+			children = (
+				B9F8916C211A7AD60051CFD2 /* MacBox.h */,
+				B9F8916D211A7AD60051CFD2 /* Info.plist */,
+			);
+			path = MacBox;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -261,6 +300,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B1C77620ED1BE500A11593 /* Box.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9F89167211A7AD60051CFD2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9F8916E211A7AD60051CFD2 /* MacBox.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +351,24 @@
 			productReference = A9B1C78020ED1BF400A11593 /* demo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B9F89169211A7AD60051CFD2 /* MacBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9F89171211A7AD60051CFD2 /* Build configuration list for PBXNativeTarget "MacBox" */;
+			buildPhases = (
+				B9F89165211A7AD60051CFD2 /* Sources */,
+				B9F89166211A7AD60051CFD2 /* Frameworks */,
+				B9F89167211A7AD60051CFD2 /* Headers */,
+				B9F89168211A7AD60051CFD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacBox;
+			productName = MacBox;
+			productReference = B9F8916A211A7AD60051CFD2 /* MacBox.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -319,6 +384,9 @@
 						LastSwiftMigration = 0940;
 					};
 					A9B1C77F20ED1BF400A11593 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					B9F89169211A7AD60051CFD2 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -338,6 +406,7 @@
 			targets = (
 				A9B1C77020ED1BE500A11593 /* Box */,
 				A9B1C77F20ED1BF400A11593 /* demo */,
+				B9F89169211A7AD60051CFD2 /* MacBox */,
 			);
 		};
 /* End PBXProject section */
@@ -357,6 +426,13 @@
 				A9B1C78D20ED1BF600A11593 /* LaunchScreen.storyboard in Resources */,
 				A9B1C78A20ED1BF600A11593 /* Assets.xcassets in Resources */,
 				A9B1C78820ED1BF400A11593 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9F89168211A7AD60051CFD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +476,30 @@
 				A9BD52A320F4F57400D85EDD /* demoVC.swift in Sources */,
 				A9BD529F20F238D000D85EDD /* shrinkViewController.swift in Sources */,
 				A9BD529B20F22B0F00D85EDD /* detailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9F89165211A7AD60051CFD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9F89172211A7B040051CFD2 /* APNG.swift in Sources */,
+				B9F89173211A7B040051CFD2 /* Cache.swift in Sources */,
+				B9F89174211A7B040051CFD2 /* Canvas.swift in Sources */,
+				B9F89175211A7B040051CFD2 /* PlaygroundSupport.swift in Sources */,
+				B9F89176211A7B040051CFD2 /* Bezier.swift in Sources */,
+				B9F89177211A7B040051CFD2 /* Circle.swift in Sources */,
+				B9F89178211A7B040051CFD2 /* Rectangle.swift in Sources */,
+				B9F89179211A7B040051CFD2 /* Shape.swift in Sources */,
+				B9F8917A211A7B040051CFD2 /* Gradient.swift in Sources */,
+				B9F8917B211A7B040051CFD2 /* Image.swift in Sources */,
+				B9F8917C211A7B040051CFD2 /* Pattern.swift in Sources */,
+				B9F8917D211A7B040051CFD2 /* Shading.swift in Sources */,
+				B9F8917E211A7B040051CFD2 /* Shadow.swift in Sources */,
+				B9F8917F211A7B040051CFD2 /* Text.swift in Sources */,
+				B9F89180211A7B040051CFD2 /* Texture.swift in Sources */,
+				B9F89181211A7B040051CFD2 /* FlexBox.swift in Sources */,
+				B9F89182211A7B040051CFD2 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +750,62 @@
 			};
 			name = Release;
 		};
+		B9F8916F211A7AD60051CFD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2DLB5HANTP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = MacBox/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.francisYinHao.MacBox;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		B9F89170211A7AD60051CFD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2DLB5HANTP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = MacBox/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.francisYinHao.MacBox;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -676,6 +832,15 @@
 			buildConfigurations = (
 				A9B1C79020ED1BF600A11593 /* Debug */,
 				A9B1C79120ED1BF600A11593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9F89171211A7AD60051CFD2 /* Build configuration list for PBXNativeTarget "MacBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9F8916F211A7AD60051CFD2 /* Debug */,
+				B9F89170211A7AD60051CFD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

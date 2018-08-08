@@ -8,10 +8,7 @@
 
 import UIKit
 
-public protocol Hostable{
-    func applyResult(rect:CGRect)
-    func calcSize(size:CGSize)->CGSize
-}
+
 
 
 extension UIView:Hostable {

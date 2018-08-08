@@ -201,7 +201,7 @@ class FlexLine: FlexSubBox{
     }
     var needFitSize: Bool = false
     
-    var host: UIView?
+    var host: Hostable?
     
     var direction: FlexDirection
     
